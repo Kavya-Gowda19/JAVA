@@ -1,0 +1,15 @@
+package com.pack;
+import java.util.*;
+public class MaxArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+			int arr[]= {2,55,100,600,32,15};
+			Arrays.sort(arr);
+			System.out.println(Arrays.toString(arr));
+			System.out.println("max Array : "+arr[arr.length-1]);
+	}
+
+}
