@@ -1,0 +1,27 @@
+package com.pack;
+import java.util.*;
+public class LeapYear {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int x;
+		System.out.println("Enter the year");
+		x=s.nextInt();
+		if(x%4==0 && x%100!=0) {
+		System.out.println("leap year");
+		}
+		else if(x%400==0) {
+			System.out.println("leap year");	
+		}
+		else {
+			System.out.println("Not leap year");
+		}
+	}
+}
+
+/*
+conditions:1.should divisible by 4 and not by 100
+           2.should be divisible by 400
+
+In short if(x%4==0 && x%100!=0 || x%400==0)
+
+*/
