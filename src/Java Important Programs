@@ -1,1 +1,28 @@
+DAY-1
+1.------------Leap Year 
+package com.pack;
+import java.util.*;
+public class LeapYear {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub                // condition 1.divisible by 400
+		Scanner s=new Scanner(System.in);                              2.divisible by 4 and not by 100
+		int x;
+		System.out.println("Enter the year");
+		x=s.nextInt();
+		if(x%4==0 && x%100!=0) {
+		System.out.println("leap year");
+		}
+		else if(x%400==0) {
+			System.out.println("leap year");	
+		}
+		else {
+			System.out.println("Not leap year");
+		}
+	}
+}
+
+
+
+
 
