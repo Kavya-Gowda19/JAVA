@@ -22,6 +22,206 @@ public class LeapYear {
 	}
 }
 
+DAY-2
+Array:
+NOTE:
+1.Array is an collection of homogenus element
+2.Can't directly store integers and strings in the same array .we use an Object array in Java
+        Object arr[] = {10, "hello", 3.14}
+        String names[] = {"Alice", "Bob", "Charlie"};
+        Int a[]=new int[n];  or in a[]={2,4,5,7};
+3.  Loop through the array
+     for (String name : names) {
+     System.out.println(name); }
+4. javac array.java
+   java array
+
+
+
+2.-------------Reverse  of array
+//revers a given array
+import java.util.*;
+public class Reverse {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number of array");
+        int n=s.nextInt();
+        int a[]=new int [n];
+        System.out.println("Enter the  array elements");
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        int res[]=new int[a.length];
+        int temp=0;
+        for(int i=a.length-1;i>=0;i--) {
+            res[temp]=a[i];	//1st position to resultant array res[0]=a[6]
+            temp++;
+        }
+        System.out.println("The arry before reversing:");
+        for(Integer i: a) {
+            System.out.print(i+" " );
+        }
+        System.out.println();
+        System.out.println("The arry After reversing:");
+        for(Integer i: res) {
+            System.out.print(i+" " );
+        }
+
+    }
+}
+
+3.--------------------Bubble sort
+import java.util.*;
+public class BubbleSort {
+    public static void main(String args[]){
+       Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number of array");
+        int n=s.nextInt();
+        int a[]=new int [n];
+        System.out.println("Enter the  array elements");
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        int min=0;
+        int max=0;
+        int temp=0;
+        for(int i=0;i<a.length-1;i++){
+            for(int j=i+1;j<a.length;j++){
+                if(a[i]>a[j]){
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        for(Integer i :a){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        System.out.println("-------------");
+        System.out.println("The minimum element is: "+a[0]);
+        System.out.println("The maximum element is: "+a[a.length-1]);
+    }
+}
+ 4.----------------LinearSearch to find the specific elemnts
+import java.util.Scanner;
+public class LinearSearch {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        int a[]={2,3,56,78,43,789,33,100,67,78};
+        System.out.println("Enter the element");
+        int key =s.nextInt();
+        for(int i=0;i<a.length;i++){
+            if(key==a[i]){
+                System.out.println("Key is found at position "+ i);
+                System.exit(0);                                         //System.exit(0) terminates the program when it finds a missing letter,
+            }
+        }
+        System.out.println("Key is not found at position ");
+
+    }
+}
+
+5.----------------Keerti is the owner of the educational instition named as ajna group of Insstitute under Ajna group of institution 
+keerti has constructed three colleges each for medical and enginerring.one the acdedmic admission is completed in all this colleges 
+keerti want to want is the revenue made by each college ad also  she wanted to check the what is the overall revenue made by ajna group of 
+institution ,despite the same using revelent programing technique
+
+package Arrays;
+import java.util.Scanner;
+public class Array2 {
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  Scanner s=new Scanner(System.in);
+  System.out.println("Enter the number of wings under ajna group of institutions :");
+  int wing=s.nextInt();
+  System.out.println("Enter the number of colleges constructed by keerti under each wing :");
+  int col=s.nextInt();
+  //create 2 d array
+   int  arr[][]=new int[20][20];
+   long overall_revenue=0;
+   for(int i=0;i<wing;i++) {
+	   System.out.println("Inside the wing number: "+(i+1));
+	   for(int j=0;j<arr[i].length;j++) {
+		   System.out.println("Enter Revenue made by college number: "+(j+1));  
+		   arr[i][j]=s.nextInt();
+		   overall_revenue+=arr[i][j];
+	   }	   
+   }
+   System.out.println("------------------");
+   //didsplay data
+   for(int i=0;i<wing;i++) {
+	   System.out.println("Inside the wing number: "+(i+1));
+	   for(int j=0;j<arr[i].length;j++) {
+		   System.out.println("The Revenue made by college number: "+(j+1)+"is"+arr[i][j]);     
+		   overall_revenue+=arr[i][j];
+	   }
+	   System.out.println("------------------");
+	   System.out.println("Overall revenue made by keerti's ajna group of institute: "+ overall_revenue);	   
+	}
+	}
+}
+ 
+6.---------------Panagram Program
+public class AlphabetParagram {
+    public static void main(String arg[]) {
+        // Given character array (added missing 'y')
+        char arr[] = {'a','b','c','d','e','f','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+        int res[] = new int[26]; // By default, all values are 0
+
+        for (int i = 0; i < arr.length; i++) {
+            int temp = arr[i] - 'a'; // Find the index for the letter
+            res[temp] = 1; // Mark letter as present
+        }
+
+        // Check if all letters are present
+        for (int i = 0; i < res.length; i++) {
+            if (res[i] != 1) {
+                System.out.println("This array does not contain all the alphabets of English.");
+                return; // Exit method instead of System.exit(0) for better practice
+            }
+        }
+
+        System.out.println("This array contains all the alphabets of English.");
+    }
+}
+
+7.--------------------Palindrome String
+ import java.util.Scanner;
+public class Palindrome{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = sc.next();
+
+        String str_temp = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            str_temp = str_temp + str.charAt(i);// each char of word
+        }
+
+        if (str.equals(str_temp) == true) {
+            System.out.println("The string is palindrome");
+        } else {
+            System.out.println("The string is not a palindrome");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
