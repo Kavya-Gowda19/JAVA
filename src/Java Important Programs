@@ -166,7 +166,7 @@ public static void main(String[] args) {
 6.---------------Panagram Program
 public class AlphabetParagram {
     public static void main(String arg[]) {
-        // Given character array (added missing 'y')
+       
         char arr[] = {'a','b','c','d','e','f','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
         int res[] = new int[26]; // By default, all values are 0
@@ -194,7 +194,7 @@ public class Palindrome{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string");
-        String str = sc.next();
+        String str = sc.nextLine();
 
         String str_temp = "";
         for (int i = str.length() - 1; i >= 0; i--) {
@@ -208,6 +208,76 @@ public class Palindrome{
         }
     }
 }
+
+//-------------Prime Number
+
+import java.util.Scanner;
+public class Prime{
+public static void main(String args[]){
+Scanner s=new Scanner(System.in);
+System.out.println("Enter the number");
+int n=s.nextInt();
+int flag=False;
+if(n==0||n==1){
+flag =True;
+}
+for(int i=0;i<n/2;i++){
+int i=
+flag=false;
+}
+if(flag==true){
+system.out.println("Number is not prime");
+}else{
+system.out.println("Number is prime");
+
+}
+
+
+
+
+
+//------------Fibonacii using recurssion
+//------------Tower Of Hanoi
+//------------Palindrome Number
+//------------transpose Of Matrix
+//------------MinMax using Library
+//------------Check Anagram
+//------------Missing Number
+//------------MatrixAddition
+//------------MatrixMultiplication
+//-----------Diagonal of a Matrix
+//-----------Checking number is power of 2
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
