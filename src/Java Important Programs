@@ -1,5 +1,5 @@
-DAY-1
-1.------------Leap Year 
+
+1.----------------------------------------------------Leap Year-------------------------------------------------------------------------------------------------------
 package com.pack;
 import java.util.*;
 public class LeapYear {
@@ -22,23 +22,9 @@ public class LeapYear {
 	}
 }
 
-DAY-2
-Array:
-NOTE:
-1.Array is an collection of homogenus element
-2.Can't directly store integers and strings in the same array .we use an Object array in Java
-        Object arr[] = {10, "hello", 3.14}
-        String names[] = {"Alice", "Bob", "Charlie"};
-        Int a[]=new int[n];  or in a[]={2,4,5,7};
-3.  Loop through the array
-     for (String name : names) {
-     System.out.println(name); }
-4. javac array.java
-   java array
 
 
-
-2.-------------Reverse  of array
+2.----------------------------------------Reverse  of  Intger array-------------------------------------------------------------------------------------------------------
 //revers a given array
 import java.util.*;
 public class Reverse {
@@ -56,7 +42,7 @@ public class Reverse {
         int temp=0;
         for(int i=a.length-1;i>=0;i--) {
             res[temp]=a[i];	//1st position to resultant array res[0]=a[6]
-            temp++;
+            temp++;             //temp increment assigns next value in res array
         }
         System.out.println("The arry before reversing:");
         for(Integer i: a) {
@@ -71,7 +57,23 @@ public class Reverse {
     }
 }
 
-3.--------------------Bubble sort
+4.--------------------------------------------------------Reverse of String-------------------------------------------------------------------------------------------------------
+ import java.util.Scanner;
+public class ReverseString{
+    public static void main (String args []){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the String");
+        String str=s.nextLine();
+        String str_temp="";
+        for(int i=str.length()-1;i>=0;i--) {
+            str_temp = str_temp + str.charAt(i);
+        }
+            System.out.println(" the Reverse String :"+ str_temp);
+
+        }
+    }
+
+3.-----------------------------------------------------Bubble sort-------------------------------------------------------------------------------------------------------
 import java.util.*;
 public class BubbleSort {
     public static void main(String args[]){
@@ -104,7 +106,7 @@ public class BubbleSort {
         System.out.println("The maximum element is: "+a[a.length-1]);
     }
 }
- 4.----------------LinearSearch to find the specific elemnts
+ 4.--------------------------------LinearSearch to find the specific elemnts-------------------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class LinearSearch {
     public static void main(String args[]){
@@ -123,7 +125,7 @@ public class LinearSearch {
     }
 }
 
-5.----------------Keerti is the owner of the educational instition named as ajna group of Insstitute under Ajna group of institution 
+5.----------------Keerti is the owner of the educational instition named as ajna group of Insstitute under Ajna group of institution---------------------------------
 keerti has constructed three colleges each for medical and enginerring.one the acdedmic admission is completed in all this colleges 
 keerti want to want is the revenue made by each college ad also  she wanted to check the what is the overall revenue made by ajna group of 
 institution ,despite the same using revelent programing technique
@@ -163,7 +165,7 @@ public static void main(String[] args) {
 	}
 }
  
-6.---------------Panagram Program
+6.------------------------------------------------Panagram Program-------------------------------------------------------------------------------------------------------
 public class AlphabetParagram {
     public static void main(String arg[]) {
        
@@ -188,7 +190,7 @@ public class AlphabetParagram {
     }
 }
 
-7.--------------------Palindrome String
+7.--------------------------------------Palindrome String-------------------------------------------------------------------------------------------------------
  import java.util.Scanner;
 public class Palindrome{
     public static void main(String[] args) {
@@ -209,28 +211,41 @@ public class Palindrome{
     }
 }
 
-//-------------Prime Number
+//-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
-public class Prime{
-public static void main(String args[]){
-Scanner s=new Scanner(System.in);
-System.out.println("Enter the number");
-int n=s.nextInt();
-int flag=False;
-if(n==0||n==1){
-flag =True;
+public class PrimeNumber{
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        boolean flag=false;  //use flase lower case
+        if(n==0||n==1){
+            flag =true;
+        }
+        for(int i=0;i<=Math.sqrt(n);i++){
+            if(n%2==0){
+                flag=true;
+                break;
+            }
+            }
+        if(flag == true){
+            System.out.println("Number is not prime");
+        }else{
+            System.out.println("Number is prime");
+        }
+    }
 }
-for(int i=0;i<n/2;i++){
-int i=
-flag=false;
-}
-if(flag==true){
-system.out.println("Number is not prime");
-}else{
-system.out.println("Number is prime");
+//prime number is which is divisible  by 1 and itself 
+//0 and 1 are not prime
+//leaving 2 all other even numner can be divide by 2
+//Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
+  example 2: 2,1     ✅ Yes
+          4: 2,4,1   ❌ No
 
-}
+
+
+
 
 
 
@@ -248,6 +263,29 @@ system.out.println("Number is prime");
 //-----------Diagonal of a Matrix
 //-----------Checking number is power of 2
 /
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+NOTE:
+Array:
+1.Array is an collection of homogenus element
+2.Can't directly store integers and strings in the same array .we use an Object array in Java
+        Object arr[] = {10, "hello", 3.14}
+        String names[] = {"Alice", "Bob", "Charlie"};
+        Int a[]=new int[n];  or in a[]={2,4,5,7};
+3.  Loop through the array                    
+     for (String name : names) {                  for(Interger i: a){
+     System.out.println(name); }                  System.out.println(i)}
+4.To run java Program           javac array.java
+                                java array
+5.a.length()
+
+String
+1.str.AtChar(i) -> specific character
+2.
+
+
+
 
 
 
