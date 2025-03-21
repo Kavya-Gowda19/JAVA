@@ -210,8 +210,30 @@ public class Palindrome{
         }
     }
 }
+8.--------------------------------------Palindrome Number-------------------------------------------------------------------------------------------------------
+ import java.util.Scanner;
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number");
+        int reserve =0;;
+        int n = sc.nextInt();
+        int original = n;
+        while (n > 0) {
+            int digit = n % 10;
+            reserve = reserve * 10 + digit;
+            n = n / 10;
+        }
+            if (original == reserve) {
+                System.out.println("It is palindrome");
+            } else {
+                System.out.println("It is not palindrome");
+            }
 
-//-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
+    }
+}
+
+8-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
 public class PrimeNumber{
@@ -236,6 +258,53 @@ public class PrimeNumber{
         }
     }
 }
+
+9-----------------------------------------------Fibonacii using recurssion---------------------------------------------------------------------------------------------
+
+The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones.
+The recursive function follows a depth-first approach—it keeps going down until it reaches the base case and then comes back up, summing values as it returns.
+0, 1, 1, 2, 3, 5, 8, 13, 21, ... )
+
+
+0+1=1,1+1=2
+fib(4)=fib(3)+fib(2)=2+1=3
+fib(3)=fib(2)+fib(1)=1+1=2
+fib(2)=fib(1)+fib(0)=1
+fib(1)=1
+fib(0)=0
+
+import java.util.Scanner;
+public class Fibonaccis {
+    public  static int Fibonaci(int n) {
+        if(n==0){
+            return 0;
+        }
+        else if (n==1){
+            return 1;
+        }
+        else{
+            int res= Fibonaci(n-1)+Fibonaci(n-2);
+            return res;
+        }
+
+    }
+
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+
+        int res= Fibonaci(n);
+        System.out.println(res);
+
+    }
+}
+
+10------------------------------------------------MinMax using Library---------------------------------------------------------------------------------------------
+
+
+
+
 //prime number is which is divisible  by 1 and itself 
 //0 and 1 are not prime
 //leaving 2 all other even numner can be divide by 2
@@ -251,7 +320,7 @@ public class PrimeNumber{
 
 
 
-//------------Fibonacii using recurssion
+
 //------------Tower Of Hanoi
 //------------Palindrome Number
 //------------transpose Of Matrix
@@ -283,6 +352,32 @@ Array:
 String
 1.str.AtChar(i) -> specific character
 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Difference Between if, while, and do-while in Java
+Feature	            if Statement	                         while Loop	                               do-while Loop
+Purpose	            Executes a block of code once if the     Repeats the block of code while        Executes the block of code at least once,
+                    condition is true.	                     the condition is true.	            then repeats while the condition is true.
+Condition Check     Checked once before execution.	     Checked before each iteration.	    Checked after each iteration.
+Minimum Execution   0 or 1 time (if condition is false,      0 or more times (if the condition is   At least once (it executes once even if the
+                    it doesn’t execute).	             false initially, it won’t execute)     condition is false).
+Exit Control	    No looping (Executes once, then exits).  Pre-test loop (condition is checked    Post-test loop (condition is checked after
+                                                             before execution).	                    execution).
+Syntax	           if (condition) { ... }	             while (condition) { ... }	            do { ... } while (condition);
+Use Case	   When you need to execute a block          When you need to execute a block only  When you need to execute a block at least once
+                   based on a condition but not repeatedly   if the condition is true.	            before checking the condition.
+
 
 
 
