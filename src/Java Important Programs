@@ -321,14 +321,44 @@ public class Fibonaccis {
 11------------------------------------------------Matrix Addition---------------------------------------------------------------------------------------------
   
 import java.util.*;
-package com.pack;
-public class MatrixAddition{
-public static void main (String args[]){
-Scanner s=nrew Sanner(System.in);
-System.out.println("Enter the size")
+public class MatrixAddition {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the size");
+        int k = s.nextInt();
+        int m[][] = new int[k][k];
+        int n[][] = new int[k][k];
+        int res[][] = new int[k][k];
+        System.out.println("Enter elements of matrix m");
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < k; j++) {
+                m[i][j] = s.nextInt();
+            }
+        }
+        System.out.println("Enter elements of matrix n");
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < k; j++) {
+                n[i][j] = s.nextInt();
+            }
+        }
+        //perform opertation
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < k; j++) {
+                res[i][j] = m[i][j] + n[i][j];
+            }
+        }
+        System.out.println("Resultant Matrix ");
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < k; j++) {
+                System.out.print(res[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
 
-
-
+12------------------------------------------------Matrix Multiplication---------------------------------------------------------------------------------------------
+  
 
 
 
