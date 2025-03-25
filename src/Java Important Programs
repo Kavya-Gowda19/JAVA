@@ -57,7 +57,7 @@ public class Reverse {
     }
 }
 
-4.--------------------------------------------------------Reverse of String-------------------------------------------------------------------------------------------------------
+3.--------------------------------------------------------Reverse of String-------------------------------------------------------------------------------------------------------
  import java.util.Scanner;
 public class ReverseString{
     public static void main (String args []){
@@ -73,7 +73,7 @@ public class ReverseString{
         }
     }
 
-3.-----------------------------------------------------Bubble sort-------------------------------------------------------------------------------------------------------
+4..-----------------------------------------------------Bubble sort-------------------------------------------------------------------------------------------------------
 import java.util.*;
 public class BubbleSort {
     public static void main(String args[]){
@@ -106,7 +106,7 @@ public class BubbleSort {
         System.out.println("The maximum element is: "+a[a.length-1]);
     }
 }
- 4.--------------------------------LinearSearch to find the specific elemnts-------------------------------------------------------------------------------------------------------
+ 5.--------------------------------LinearSearch to find the specific elemnts-------------------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class LinearSearch {
     public static void main(String args[]){
@@ -125,7 +125,7 @@ public class LinearSearch {
     }
 }
 
-5.----------------Keerti is the owner of the educational instition named as ajna group of Insstitute under Ajna group of institution---------------------------------
+6..----------------Keerti is the owner of the educational instition named as ajna group of Insstitute under Ajna group of institution---------------------------------
 keerti has constructed three colleges each for medical and enginerring.one the acdedmic admission is completed in all this colleges 
 keerti want to want is the revenue made by each college ad also  she wanted to check the what is the overall revenue made by ajna group of 
 institution ,despite the same using revelent programing technique
@@ -165,7 +165,7 @@ public static void main(String[] args) {
 	}
 }
  
-6.------------------------------------------------Panagram Program-------------------------------------------------------------------------------------------------------
+7.------------------------------------------------Panagram Program-------------------------------------------------------------------------------------------------------
 public class AlphabetParagram {
     public static void main(String arg[]) {
        
@@ -190,7 +190,7 @@ public class AlphabetParagram {
     }
 }
 
-7.--------------------------------------Palindrome String-------------------------------------------------------------------------------------------------------
+8.--------------------------------------Palindrome String-------------------------------------------------------------------------------------------------------
  import java.util.Scanner;
 public class Palindrome{
     public static void main(String[] args) {
@@ -210,7 +210,7 @@ public class Palindrome{
         }
     }
 }
-8.--------------------------------------Palindrome Number-------------------------------------------------------------------------------------------------------
+9.--------------------------------------Palindrome Number-------------------------------------------------------------------------------------------------------
  import java.util.Scanner;
 public class PalindromeNumber {
     public static void main(String[] args) {
@@ -233,7 +233,7 @@ public class PalindromeNumber {
     }
 }
 
-8-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
+10-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
 public class PrimeNumber{
@@ -259,7 +259,7 @@ public class PrimeNumber{
     }
 }
 
-9-----------------------------------------------Fibonacii using recurssion---------------------------------------------------------------------------------------------
+11.-----------------------------------------------Fibonacii using recurssion---------------------------------------------------------------------------------------------
 
 The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones.
 The recursive function follows a depth-first approach—it keeps going down until it reaches the base case and then comes back up, summing values as it returns.
@@ -300,7 +300,7 @@ public class Fibonaccis {
     }
 }
 
-10------------------------------------------------MinMax using Library---------------------------------------------------------------------------------------------
+12.------------------------------------------------MinMax using Library---------------------------------------------------------------------------------------------
    
    import java.util.*;
    public class MaxMin{
@@ -318,7 +318,7 @@ public class Fibonaccis {
   System.out.println("largest elements " + a[a.length-1]);
 }}
 
-11------------------------------------------------Matrix Addition---------------------------------------------------------------------------------------------
+13.------------------------------------------------Matrix Addition---------------------------------------------------------------------------------------------
   
 import java.util.*;
 public class MatrixAddition {
@@ -357,13 +357,165 @@ public class MatrixAddition {
     }
 }
 
-12------------------------------------------------Matrix Multiplication---------------------------------------------------------------------------------------------
-  
+14.------------------------------------------------Matrix Multiplication---------------------------------------------------------------------------------------------
+package pack.com;
+import java.util.Scanner;
+public class MatrixMultplication {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter the size :");
+        int n = s.nextInt();
+
+        int m1[][] = new int[n][n];
+        int m2[][] = new int[n][n];
+        int res[][] = new int[n][n];
+
+        System.out.println("Enter the elements of matrix m1:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                m1[i][j] = s.nextInt();
+            }
+        }
+
+        System.out.println("Enter the elements of matrix m2:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                m2[i][j] = s.nextInt();
+            }
+        }
+
+        for (int i = 0; i < n; i++) { 
+            for (int j = 0; j < n; j++) { 
+                res[i][j] = 0; 
+                for (int k = 0; k < n; k++) { 
+                    res[i][j] += m1[i][k] * m2[k][j]; 
+                }
+            }
+        }
+
+        System.out.println("resultant matrix  multiplication:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(res[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
+    }
+}
 
+15.------------------------------------------------Anagram------------------------------------------------------------------------------------------------------------
+  Anagrams are words or phrases formed by rearranging the letters of another word or phrase. For example:
+  eg:  Listen → Silent,Debit card → Bad credit
+package com.string;
+import java.util.Arrays;
+import java.util.Scanner;
+public class anagrams {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		//step-1
+		System.out.println("enter the first string:  ");
+		String str1= sc.next();
+		System.out.println("enter the second string:  ");
+		String str2= sc.next();
+		System.out.println("----------");
+		//step-2
+		if(str1.length()==str2.length()) { 
+			char c1[]=str1.toCharArray();
+			char c2[]=str2.toCharArray();
+		//step-3
+		for(int i=0;i<str1.length();i++) {
+			c1[i]=str1.charAt(i);
+			c2[i]=str2.charAt(i);
+		}
+		//step-4
+		//sorting array c1
+		Arrays.sort(c1);
+		Arrays.sort(c2);
+		//step-5
+		if (Arrays.equals(c1,  c2)==true) {
+			System.out.println("the strings are anagrams");
+		}
+			else {
+				System.out.println("the strings are not anagrams");
+			}
+		}
+		else {
+			System.out.println("the strings are not anagrams");
+		}
+	}	
+	}
+// Anagram built in function
+package com.string;
 
+import java.util.Scanner;
+class sorting{
+	char [] sort(char c[]) {
+		char temp;
+		for (int i=0;i<c.length-1;i++) {
+			for (int j=i+1;j<c.length;j++) {
+			if(c[i]>c[j]) {
+				temp=c[i];
+				c[i]=c[j];
+				c[j]=temp;
+			}
+			
+		}
+		
+	}
+	return c;
+}
+}
+public class anagramswithoutbuiltin {
 
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		//step-1
+				System.out.println("enter the first string:  ");
+				String str1= sc.next();
+				System.out.println("enter the second string:  ");
+				String str2= sc.next();
+				System.out.println("----------");
+				//step-2
+				if(str1.length()==str2.length()) { 
+					char c1[]=new char[str1.length()];
+					char c2[]=new char[str2.length()];
+				//step-3
+				for(int i=0;i<str1.length();i++) {
+					c1[i]=str1.charAt(i);
+					c2[i]=str2.charAt(i);
+				}
+				//step-4
+				//sorting array c1
+		sorting s = new sorting();
+		c1 =s.sort(c1);
+		//sorting arrayc2
+		c2 = s.sort(c2);
+		for(Character c : c1) {
+			System.out.print(c+" ");
+		}
+		System.out.println();
+			System.out.println("------");
+			for(Character c : c1) {
+				System.out.print(c+" ");
+			}
+			System.out.println();
+				System.out.println("------");
+		//step-5
+				for(int i=0;i<c1.length;i++) {
+					if (c1[i]!=c2[i]) {
+						System.out.println("the strings are not anagrams");
+						System.exit(0);
+					}
+				}
+				System.out.println("the strings are  anagrams");
+				}
+	}
+}
+
+14.------------------------------------------------HCF-LCM---------------------------------------------------------------------------------------------
 
 
 
@@ -395,13 +547,13 @@ public class MatrixAddition {
 //------------Palindrome Number
 //------------transpose Of Matrix
 //------------MinMax using Library
-//------------Check Anagram
+//------------find sum of GP series
 //------------Missing Number
-//------------MatrixAddition
-//------------MatrixMultiplication
+//------------greatest of two number or 3 number
+//------------find sum of of GP series
 //-----------Diagonal of a Matrix
 //-----------Checking number is power of 2
-/
+//-----------number is perfect squre
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
