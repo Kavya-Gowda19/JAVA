@@ -233,7 +233,7 @@ public class PalindromeNumber {
     }
 }
 
-10-----------------------------------------------Prime Number---------------------------------------------------------------------------------------------
+10--------------------------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
 public class PrimeNumber{
@@ -535,11 +535,57 @@ public class anagramswithoutbuiltin {
 	}
 }
 
-14.------------------------------------------------HCF-LCM---------------------------------------------------------------------------------------------
+14.--------------------------------------------------------HCF-LCM---------------------------------------------------------------------------------------------
 LCM (Least Common Multiple): The LCM of two numbers is the smallest positive integer which is divisible by both numbers.
-HCF (Highest common Factor): HCF is also known as Greatest common divisor, HCF of two numbers is the largest positive integer that divides both the numbers.
+HCF (Highest common Factor)/GCD: HCF is also known as Greatest common divisor, HCF of two numbers is the largest positive integer that divides both the numbers.
+****LCM=num1*num2/HCF
+-> Example :Find HCF of 12 and 18
+Step 1: Find factors   Factors of 12 → 1, 2, 3, 4, 6, 12       or 28->2,7,2
+                       Factors of 18 → 1, 2, 3, 6, 9, 18       or 12->3,2,2
+Step 2: Identify common factors
+                       Common factors = 1, 2, 3, 6             ommon Factor=2*2 =4
+Step 3: Pick the highest
+                       HCF = 6
+-> Using Prime Factorization
+    1.Find the prime factorization of both numbers.
+    2.Take the highest power of each prime factor.
+    3.Multiply them to get LCM.
+  
+Example: Find LCM of 8 and 12
+             8 = 2³
+             12 = 2² × 3
+             Take highest powers: 2³ * 3 = 24  LCM(8,12) = 24
+ imp:somehow 1 is common factor keeps on checking one is cf or 2 is cf ... keep upadting to highest cf ---------------------------------------------------------------------------
+                                                                                                            0       1       2     3     ........ m(small no)      n(small no)
 
-15.------------------------------------------------Armstrong---------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class HcfLcm {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number1 : ");
+        int n1=s.nextInt();
+        System.out.println("Enter the numbre2 : ");
+        int n2=s.nextInt();
+        int min;   //  int min=math.min(n1,n2); built in function
+        if(n1>n2){
+            min=n1;
+        }
+        else{
+            min=n2;
+        }
+        int hcf=0;
+        for(int i=1;i<=min;i++){
+            if((n1%i==0) &&(n2%i==0)){
+                 hcf=i;
+            }
+        }
+        System.out.println("The hcf/gcd is"+ hcf);
+        int lcm=(n1*n2)/hcf;
+        System.out.println("The lcm is"+ lcm);
+    }
+}
+
+15.-------------------------------------------------------Armstrong---------------------------------------------------------------------------------------------
 
 An Armstrong number is a positive integer that is equal to the sum of its own digits each raised to the power of the number of digitoriginal
 153 = (1*1*1)+(5*5*5)+(3*3*3) 
@@ -642,6 +688,44 @@ public class VoweSpecial {
             System.out.println("Lagerest Number Is :" +n3);
         } } }
 
+17.--------------------------------------------------Transpose Of Matrixs---------------------------------------------------------------------------------------------
+  
+The transpose of a matrix is obtained by swapping rows with columns.
+   a=[2,3]       b=[2,4]
+     [4,7]         [3,7]
+   If an original matrix is of order m × n (rows × columns),
+   the transposed matrix will be of order n × m (columns × rows).
+
+
+  import java.util.Scanner;
+  public class TransposeMatrix {
+  public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number of rows");
+        int r=s.nextInt();
+        System.out.println("Enter the number of columns");
+        int c=s.nextInt();
+        int m[][] = new int[r][c];
+        System.out.println("Enter the elements");
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                m[i][j]=s.nextInt();
+            }
+        }
+        System.out.println("The Transpose matrix is ");
+        for(int i=0;i<c;i++){
+            for(int j=0;j<r;j++){
+                System.out.print(m[j][i]+ " "); // important just m[i][j]----> m[j][i]
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+
+18.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
+
 
 
 
@@ -675,7 +759,7 @@ public class VoweSpecial {
 
 //------------Tap1 Module1
 //------------Tower Of Hanoi
-//------------Palindrome Number
+
 //------------transpose Of Matrix
 //------------find sum of GP series
 //------------Missing Number
