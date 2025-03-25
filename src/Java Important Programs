@@ -360,55 +360,75 @@ public class MatrixAddition {
 14.------------------------------------------------Matrix Multiplication---------------------------------------------------------------------------------------------
 package pack.com;
 import java.util.Scanner;
-public class MatrixMultplication {
+
+public class MatrixMultiplication {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Enter the size :");
-        int n = s.nextInt();
+        System.out.println("Enter rows and columns for first matrix:");
+        int r1 = s.nextInt();
+        int c1 = s.nextInt();
 
-        int m1[][] = new int[n][n];
-        int m2[][] = new int[n][n];
-        int res[][] = new int[n][n];
+        System.out.println("Enter rows and columns for second matrix:");
+        int r2 = s.nextInt();
+        int c2 = s.nextInt();
 
-        System.out.println("Enter the elements of matrix m1:");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        // Check if multiplication is possible
+        if (c1 != r2) {
+            System.out.println("Matrix multiplication not possible! Columns of first matrix must equal rows of second matrix.");
+            return;
+        }
+
+        int[][] m1 = new int[r1][c1];
+        int[][] m2 = new int[r2][c2];
+        int[][] res = new int[r1][c2]; // Resultant matrix will be of size r1 × c2
+
+        System.out.println("Enter elements of first matrix:");
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c1; j++) {
                 m1[i][j] = s.nextInt();
             }
         }
 
-        System.out.println("Enter the elements of matrix m2:");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        System.out.println("Enter elements of second matrix:");
+        for (int i = 0; i < r2; i++) {
+            for (int j = 0; j < c2; j++) {
                 m2[i][j] = s.nextInt();
             }
         }
 
-        for (int i = 0; i < n; i++) { 
-            for (int j = 0; j < n; j++) { 
+        // Matrix multiplication
+        for (int i = 0; i < r1; i++) { 
+            for (int j = 0; j < c2; j++) { 
                 res[i][j] = 0; 
-                for (int k = 0; k < n; k++) { 
+                for (int k = 0; k < c1; k++) { // Use c1 (or r2, both are equal)
                     res[i][j] += m1[i][k] * m2[k][j]; 
                 }
             }
         }
 
-        System.out.println("resultant matrix  multiplication:");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        System.out.println("Resultant Matrix:");
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c2; j++) {
                 System.out.print(res[i][j] + " ");
             }
             System.out.println();
         }
 
-
+        s.close();
     }
 }
 
 15.------------------------------------------------Anagram------------------------------------------------------------------------------------------------------------
   Anagrams are words or phrases formed by rearranging the letters of another word or phrase. For example:
   eg:  Listen → Silent,Debit card → Bad credit
+step1:Collet the string
+step2:create 2 string which is having the size same as the 2 strings provoided the strings have same size else directly prints that the are
+     string are not anagram 
+step3:Traverse the string and store the characters into array
+step4:sort the aray using bubble sort 
+step5:compare the two string
+//anagram built in funtion
 package com.string;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -435,7 +455,7 @@ public class anagrams {
 		Arrays.sort(c1);
 		Arrays.sort(c2);
 		//step-5
-		if (Arrays.equals(c1,  c2)==true) {
+		if (Arrays.equals(c1,c2)==true) {
 			System.out.println("the strings are anagrams");
 		}
 			else {
@@ -447,7 +467,7 @@ public class anagrams {
 		}
 	}	
 	}
-// Anagram built in function
+// Anagram
 package com.string;
 
 import java.util.Scanner;
@@ -516,7 +536,36 @@ public class anagramswithoutbuiltin {
 }
 
 14.------------------------------------------------HCF-LCM---------------------------------------------------------------------------------------------
+LCM (Least Common Multiple): The LCM of two numbers is the smallest positive integer which is divisible by both numbers.
+HCF (Highest common Factor): HCF is also known as Greatest common divisor, HCF of two numbers is the largest positive integer that divides both the numbers.
 
+15.------------------------------------------------Armstrong---------------------------------------------------------------------------------------------
+
+An Armstrong number is a positive integer that is equal to the sum of its own digits each raised to the power of the number of digitoriginal
+153 = (1*1*1)+(5*5*5)+(3*3*3) 
+9474=(9*9*9*9)+(4*4*4*4)+(7*7*7*7)+(4*4*4*4)
+
+import java.util.Scanner;
+public class Armstrong {
+    public static void main(String args []){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        int original=n;
+        int sum=0;
+        while(n>0){
+            int r=n%10;
+            n=n/10;
+            sum=sum+ r*r*r;
+        }
+        if(original==sum){
+            System.out.println("Number is Armstrong");
+        }
+        else{
+            System.out.println("Number is  not armstrong");
+        }
+    }
+}
 
 
 
@@ -546,7 +595,6 @@ public class anagramswithoutbuiltin {
 //------------Tower Of Hanoi
 //------------Palindrome Number
 //------------transpose Of Matrix
-//------------MinMax using Library
 //------------find sum of GP series
 //------------Missing Number
 //------------greatest of two number or 3 number
