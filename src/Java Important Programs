@@ -566,6 +566,33 @@ public class Armstrong {
         }
     }
 }
+16.------------------------------------------------VowelConsanant---------------------------------------------------------------------------------------------
+ import java.util.*;
+public class Vowel {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        String str;
+        System.out.println("Enter the String:");
+        str=s.nextLine().toLowerCase();
+         int vowel_count=0;
+        int consonant_count=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)>=97 && str.charAt(i)<=122) { ///ascii values are needed when needed to count specific character
+                if (str.charAt(i) == 'a' || str.charAt(i) == 'i' || str.charAt(i) == 'e' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {
+                    vowel_count++;
+                } else {
+                    consonant_count++;
+                }
+            }
+
+            }
+        System.out.println("the String length :"+ str.length());
+        System.out.println("the number of vowel:"+vowel_count);
+        System.out.println("the number of consonant"+consonant_count);
+        }
+
+    }
+
 
 
 
