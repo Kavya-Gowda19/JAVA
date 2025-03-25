@@ -621,7 +621,33 @@ public class VoweSpecial {
         }
         System.out.println("Repled String  :"+ str_temp);
     }}
-16.------------------------------------------------VowelConsanant---------------------------------------------------------------------------------------------
+16.------------------------------------------------greatest of two number or 3 number---------------------------------------------------------------------------------------------
+     import java.util.Scanner;
+    public class GreatestNo{
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the First Number");
+        int n1=s.nextInt();
+        System.out.println("Enter the Second Number");
+        int n2=s.nextInt();
+        System.out.println("Enter the Third Number");
+        int n3=s.nextInt();
+        if(n1>=n2 && n1>=n3){
+            System.out.println("Lagerest Number Is :" +n1);
+        }
+        else if(n2>=n1 && n2>=n3){
+            System.out.println("Lagerest Number Is :" +n2);
+        }
+        else{
+            System.out.println("Lagerest Number Is :" +n3);
+        } } }
+
+
+
+
+
+
+  
 
 
 
