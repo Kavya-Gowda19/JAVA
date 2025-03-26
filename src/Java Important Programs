@@ -742,8 +742,56 @@ int  digit(int n){
     }
 }
 
-18.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
+18.------------------------------------------------Factorial---------------------------------------------------------------------------------------------
+-factoril of 0 and 1 is 1
+-formula n*fact(n-1)
+//recurssion
 
+import java.util.Scanner;
+public class Factorial {
+    static int fact(int n){
+        if(n==0||n==1){
+            return 1;
+        }
+        return n * fact(n-1);
+
+
+    }
+    public static void main (String args[]){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        System.out.println("Factorial is "+ Factorial.fact(n));
+
+    }
+}
+// itterative method
+   import java.util.Scanner;
+public class Factorial {
+    static int fact(int n){
+        int res=1;
+        for(int i=1;i<=n;i++ ){
+            res=res*i;
+        }
+    return res;
+
+    }
+    public static void main (String args[]){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        System.out.println("Factorial is "+ Factorial.fact(n));
+
+    }
+}
+
+
+
+
+
+
+
+19.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
 
 
 
@@ -766,6 +814,40 @@ int  digit(int n){
 //Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
   example 2: 2,1     ✅ Yes
           4: 2,4,1   ❌ No
+//static and non static keyword in the method
+  Don’t use static if the method needs to work with instance variables or objects.
+  1. static in Methods
+     When a method is declared as static, it means:
+       -It belongs to the class and not to any specific object.
+       -You can call it without creating an object.
+       -It cannot directly access non-static (instance) variables or methods
+             class Example {
+             static void greet() {  // ✅ Static method
+             System.out.println("Hello, world!");
+             }
+             public static void main(String[] args) {
+             greet(); // ✅ Called without an object
+             }
+             }
+    2.non static in methods
+      Why Not Always Use static?
+         -If a method needs to access instance variables or methods, it should NOT be static.
+         -static methods cannot use this keyword because they don’t belong to an object
+              class Example {
+              int x = 10;  // Instance variable
+              void show() {  // ❌ Cannot be static because it accesses x
+              System.out.println("Value of x: " + x);
+             }
+             public static void main(String[] args) {
+             Example obj = new Example(); // ✅ Create object
+             obj.show(); // ✅ Call non-static method
+             }
+             }
+
+
+
+
+
 
 
 
