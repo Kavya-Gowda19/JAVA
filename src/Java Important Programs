@@ -722,7 +722,25 @@ The transpose of a matrix is obtained by swapping rows with columns.
 
     }
 }
-
+18.------------------------------------------------Count Digits---------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class CountNo {
+int  digit(int n){
+    int count=0;
+    while(n>0) {
+        n = n / 10;
+        count+=1;
+    }
+    return count ;
+}
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        CountNo d=new CountNo();
+        System.out.println("the number of digits :"+d.digit(n));
+    }
+}
 
 18.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
 
