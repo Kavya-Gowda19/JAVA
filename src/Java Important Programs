@@ -792,6 +792,27 @@ public class Factorial {
 
 
 19.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
+20.------------------------------------------------Word count string---------------------------------------------------------------------------------------------
+   import java.util.Scanner;
+    public class countWord {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the String:");
+        String str = s.nextLine().trim();
+        if (str.isEmpty()) {
+            System.out.println("Number of words: 0");
+            return;
+        }
+        int count_word = 1;  // Start with 1 word 
+        for (int i = 0; i < str.length() ; i++) {  
+            if (str.charAt(i) == ' ' && str.charAt(i + 1) != ' ') {
+                count_word++;
+            }
+        }
+        System.out.println("Number of words: " + count_word);
+       }
+       }
+21.------------------------------------------------Word count string---------------------------------------------------------------------------------------------
 
 
 
@@ -806,6 +827,8 @@ public class Factorial {
 
 
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 //prime number is which is divisible  by 1 and itself 
