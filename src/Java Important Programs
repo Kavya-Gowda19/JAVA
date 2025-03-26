@@ -234,6 +234,9 @@ public class PalindromeNumber {
 }
 
 10--------------------------------------------------------------Prime Number---------------------------------------------------------------------------------------------
+//prime number is which is divisible  by 1 and itself 
+//0 and 1 are not prime
+//leaving 2 all other even numner can be divide by 2
 
 import java.util.Scanner;
 public class PrimeNumber{
@@ -741,6 +744,10 @@ int  digit(int n){
         System.out.println("the number of digits :"+d.digit(n));
     }
 }
+input:1234
+output:4
+
+
 
 18.------------------------------------------------Factorial---------------------------------------------------------------------------------------------
 -factoril of 0 and 1 is 1
@@ -784,12 +791,31 @@ public class Factorial {
 
     }
 }
+20.------WAP to fnd the product of all the elements which is present in the even position and is not a vowel---------------------------------------------------------------------------------
+import java.util.*;
+public class vowel_pos {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        String str;
+        System.out.println("Enter the String:");
+        str=s.nextLine();
+        long product=1;
+        for(int i=0;i<str.length();i++){
+            if(i%2==0) { //space is also considered  //not used|| or beacause in or condition if one condition statisfies then okay
+                if (str.charAt(i) != 'a' && str.charAt(i) != 'i' && str.charAt(i) != 'e' && str.charAt(i) != 'o' && str.charAt(i) != 'u'&&
+                        str.charAt(i) != 'A' && str.charAt(i) != 'I' && str.charAt(i) != 'E' && str.charAt(i) != 'O' && str.charAt(i) != 'U') {
+                    System.out.println("Considered character Is:"+str.charAt(i));
+                    product=product * str.charAt(i);
+                }
+            }
 
+        }
+        System.out.println("the String length :"+ str.length());
+        System.out.println("the product is:"+product);
 
+    }
 
-
-
-
+}
 
 19.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
 20.------------------------------------------------Word count string---------------------------------------------------------------------------------------------
@@ -812,7 +838,87 @@ public class Factorial {
         System.out.println("Number of words: " + count_word);
        }
        }
-21.------------------------------------------------Word count string---------------------------------------------------------------------------------------------
+      input: kavya is good
+      output:3
+
+
+21.------------------------------------------------ word reverse---------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class ReverseWord {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        String str;
+        System.out.println("Enter the String:");
+        str=s.nextLine().trim();
+        int wcount=1;
+        for(int i=0;i<str.length();i++){
+            if( str.charAt(i)==' ' && str.charAt(i+1)!= ' ' ){
+                wcount++;
+            }
+        }
+         //System.out.println("Number of words :"+wcount);
+        String arr[]=new String[wcount];
+        String temp=" ";
+        int count= arr.length-1;  //3 words -1 beacause array
+
+        for(int i=str.length()-1;i>=0;i--){
+            if(str.charAt(i) != ' '){
+                temp=temp + str.charAt(i);
+            }
+            else if(str.charAt(i)== ' ' && str.charAt(i+1)!=' '){  //when space encoutered store the current word (temp) into the array at index 'count 
+                arr[count] = temp;  //  arr[2]= avaj;        // arr[1]=dlrow(from above)
+                temp=" ";  //reset temp to a single space to start building the next word // temp= ''     //
+                count--; // 1
+            }
+        }
+        arr[count]=temp;
+        for(String str1: arr){
+            System.out.print(str1+ " ");
+        }
+
+    }
+}
+
+ input: Hello World Java
+ output: Java world hello 
+22.------------------------------------------------ Missing number---------------------------------------------------------------------------------------------
+sum of n number =  n*(n+1)/2
+
++import java.util.Scanner;
+public class MissingElement {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number of elemnts (n-1)");
+        int n=s.nextInt();
+        int m=n+1;
+        int a[]=new int[m];
+        System.out.println("Enter the elements from 1 to "+ m +" :");
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+         int sum=0;
+        for(int i=0;i<n;i++){
+            sum=sum+a[i];
+        }
+        int actual_sum= m*(m+1)/2;
+        int missing=actual_sum -sum;
+        System.out.println("Missing Number is :"+missing);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 
 
@@ -831,41 +937,10 @@ public class Factorial {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-//prime number is which is divisible  by 1 and itself 
-//0 and 1 are not prime
-//leaving 2 all other even numner can be divide by 2
-//Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
-  example 2: 2,1     ✅ Yes
-          4: 2,4,1   ❌ No
-//static and non static keyword in the method
-  Don’t use static if the method needs to work with instance variables or objects.
-  1. static in Methods
-     When a method is declared as static, it means:
-       -It belongs to the class and not to any specific object.
-       -You can call it without creating an object.
-       -It cannot directly access non-static (instance) variables or methods
-             class Example {
-             static void greet() {  // ✅ Static method
-             System.out.println("Hello, world!");
-             }
-             public static void main(String[] args) {
-             greet(); // ✅ Called without an object
-             }
-             }
-    2.non static in methods
-      Why Not Always Use static?
-         -If a method needs to access instance variables or methods, it should NOT be static.
-         -static methods cannot use this keyword because they don’t belong to an object
-              class Example {
-              int x = 10;  // Instance variable
-              void show() {  // ❌ Cannot be static because it accesses x
-              System.out.println("Value of x: " + x);
-             }
-             public static void main(String[] args) {
-             Example obj = new Example(); // ✅ Create object
-             obj.show(); // ✅ Call non-static method
-             }
-             }
+
+
+
+
 
 
 
@@ -895,7 +970,7 @@ public class Factorial {
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 NOTE:
-Array:
+--->Array:
 1.Array is an collection of homogenus element
 2.Can't directly store integers and strings in the same array .we use an Object array in Java
         Object arr[] = {10, "hello", 3.14}
@@ -908,11 +983,43 @@ Array:
                                 java array
 5.a.length()
 
-String
-1.str.AtChar(i) -> specific character
+--->String
+1.The method str.charAt(i) returns the character at index i in the string str.
 2.
 
+--->static and non static keyword in the method
+  Don’t use static if the method needs to work with instance variables or objects.
+  1. static in Methods
+     When a method is declared as static, it means:
+       -It belongs to the class and not to any specific object.
+       -You can call it without creating an object.
+       -It cannot directly access non-static (instance) variables or methods
+             class Example {
+             static void greet() {  // ✅ Static method
+             System.out.println("Hello, world!");
+             }
+             public static void main(String[] args) {
+             greet(); // ✅ Called without an object
+             }
+             }
+    2.non static in methods
+      Why Not Always Use static?
+         -If a method needs to access instance variables or methods, it should NOT be static.
+         -static methods cannot use this keyword because they don’t belong to an object
+              class Example {
+              int x = 10;  // Instance variable
+              void show() {  // ❌ Cannot be static because it accesses x
+              System.out.println("Value of x: " + x);
+             }
+             public static void main(String[] args) {
+             Example obj = new Example(); // ✅ Create object
+             obj.show(); // ✅ Call non-static method
+             }
+             }
 
+--->Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
+  example 2: 2,1     ✅ Yes
+          4: 2,4,1   ❌ No
 
 
 
