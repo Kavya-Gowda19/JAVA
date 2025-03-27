@@ -1021,6 +1021,20 @@ NOTE:
   example 2: 2,1     ✅ Yes
           4: 2,4,1   ❌ No
 
+--->Ignore Space Methods
+1. Character.isWhitespace(ch)
+This method checks if a character is a whitespace (including spaces, tabs, and newlines).
+2.replace(" ", "")
+  String str = "Hello World";
+  String noSpaces = str.replace(" ", "");  // Output: "HelloWorld"
+3.replaceAll("\\s", "")
+  Removes all whitespace characters, including spaces, tabs, and newlines. 
+  String str = "Hello  World \n Java";   or String str = "Hello\tWorld \nJava   Programming";
+  String noSpaces = str.replaceAll("\\s", "");
+
+
+
+
 
 
 
