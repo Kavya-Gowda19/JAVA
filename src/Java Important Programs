@@ -232,6 +232,8 @@ public class PalindromeNumber {
 
     }
 }
+10.-----------------------------------------------prime numbers within Range------------------------------------------------------------------------------------------
+
 
 10--------------------------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 //prime number is which is divisible  by 1 and itself 
@@ -248,7 +250,7 @@ public class PrimeNumber{
         if(n==0||n==1){
             flag =true;
         }
-        for(int i=0;i<=Math.sqrt(n);i++){
+        for(int i=2;i<=Math.sqrt(n);i++){
             if(n%2==0){
                 flag=true;
                 break;
@@ -376,7 +378,7 @@ public class MatrixMultiplication {
         int r2 = s.nextInt();
         int c2 = s.nextInt();
 
-        // Check if multiplication is possible
+        // Checking  if multiplication is possible
         if (c1 != r2) {
             System.out.println("Matrix multiplication not possible! Columns of first matrix must equal rows of second matrix.");
             return;
@@ -791,7 +793,7 @@ public class Factorial {
 
     }
 }
-20.------WAP to fnd the product of all the elements which is present in the even position and is not a vowel---------------------------------------------------------------------------------
+20.------WAP to ifnd the product of all the elements which is present in the even position and is not a vowel---------------------------------------------------------------------------------
 import java.util.*;
 public class vowel_pos {
     public static void main (String args[]){
@@ -985,7 +987,6 @@ public class PerfectSquare {
 
         }
     }
-
 
 
 
