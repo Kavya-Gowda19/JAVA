@@ -912,7 +912,7 @@ public class MissingElement {
 24.-----------------------------------------------Tower Of Hanoi--------------------------------------------------------------------------------------------
 
 
-24.-----------------------------------------------Segreate String Number special Charaters------------------------------------------------------------------------------------------
+25.-----------------------------------------------Segreate String ,Number,special Charaters------------------------------------------------------------------------------------------
  
 import java.util.Scanner;
 
@@ -953,13 +953,43 @@ public class SegregateStringNumberOther {
     }
 }
 
+26.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class PerfectSquare {
+    public static boolean isPerfectSquare(int num) {
+        if (num < 0) {
+            return false;
+        } else {
+            int i = 1;
+            while (i * i <= num) {
+                if (i * i == num) {
+                    return true;
+                }
+                i++;
+            }
+        return false;
+        }
+    }
+
+        public static void main (String args[]){
+            Scanner s = new Scanner(System.in);
+            System.out.println("Enter the Number");
+            int num = s.nextInt();
+            PerfectSquare is = new PerfectSquare();
+            if(is.isPerfectSquare(num)== true){
+                System.out.println("The number is Perfect Square");
+            }
+            else{
+                System.out.println("The number is not Perfect Square");
+            }
+
+        }
+    }
 
 
 
 
-
-24.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
-24.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
+27.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
 
 
 
