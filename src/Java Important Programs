@@ -232,8 +232,6 @@ public class PalindromeNumber {
 
     }
 }
-10.-----------------------------------------------prime numbers within Range------------------------------------------------------------------------------------------
-
 
 10--------------------------------------------------------------Prime Number---------------------------------------------------------------------------------------------
 //prime number is which is divisible  by 1 and itself 
@@ -263,6 +261,39 @@ public class PrimeNumber{
         }
     }
 }
+10.-----------------------------------------------Prime numbers within Range------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class PrimeNumberRange {
+    public boolean isPrime(int n){
+        if(n==0|| n==1){
+            return false;
+        }
+        else{
+            for(int i=2;i<=Math.sqrt(n);i++){
+                if(n%2==0){
+                    return false;
+                }
+            }
+        }
+     return true;
+    }
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter start range");
+        int start=s.nextInt();
+        System.out.println("Enter end range");
+        int end=s.nextInt();
+        PrimeNumberRange p=new PrimeNumberRange();
+        System.out.println("The Prime number from "+start+" to "+end);
+        for(int i=start;i<=end;i++){
+            if (p.isPrime(i) == true){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+
 
 11.-----------------------------------------------Fibonacii using recurssion---------------------------------------------------------------------------------------------
 
@@ -820,6 +851,61 @@ public class vowel_pos {
 }
 
 19.------------------------------------------------Swapping Lowercase and uppercase---------------------------------------------------------------------------------------------
+  Enter the String:
+  KAVYAkavya YeS
+  LowerCase : kavyakavya yes
+  Uppercase : KAVYAKAVYA YES
+  UpperLower : kavyaKAVYA yEs
+
+import java.util.Scanner;
+public class LowerUpperCase {
+    public static String UpperCase(String str){
+        char ch[]=str.toCharArray();                       or              String Upper=" ";           
+        for (int i = 0; i < ch.length; i++){                               for(int i=0;i<str.length();i++){
+            if(ch[i]>='A'&& ch[i]<='Z'){                                   char ch=str.charAt(i);
+                ch[i]=(char)(ch[i]+32);                                      if(h >= 'A' && ch <= 'Z'){
+            }                                                               ch=(char)(ch+32);
+        }                                                                   }
+        String str1=new String(ch);                                         Upper+= ch;
+      return str1;
+    }
+    public static String LowerCase(String str){
+        char ch[]=str.toCharArray();
+        for (int i = 0; i < ch.length; i++){
+            if(ch[i]>='a'&& ch[i]<='z'){
+                ch[i]=(char)(ch[i]-32);
+            }
+        }
+        String str1=new String(ch);
+        return str1;
+
+    }
+    public static String UpperLowerCase(String str){
+        char ch[]=str.toCharArray();
+        for (int i = 0; i < ch.length; i++){
+            if(ch[i]>='a'&& ch[i]<='z'){
+                ch[i]=(char)(ch[i]-32);
+            }
+            else if(ch[i]>='A'&& ch[i]<='Z'){
+                ch[i]=(char)(ch[i]+32);
+            }
+        }
+        String str1=new String(ch);
+        return str1;
+    }
+
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        String str;
+        System.out.println("Enter the String:");
+        str=s.nextLine();
+        System.out.println("LowerCase : "+ LowerUpperCase.UpperCase(str));
+        System.out.println("Uppercase : "+ LowerUpperCase.LowerCase(str));
+        System.out.println("UpperLower : "+LowerUpperCase.UpperLowerCase(str));
+    }}
+
+
+
 20.------------------------------------------------Word count string---------------------------------------------------------------------------------------------
    import java.util.Scanner;
     public class countWord {
@@ -844,7 +930,7 @@ public class vowel_pos {
       output:3
 
 
-21.------------------------------------------------ word reverse---------------------------------------------------------------------------------------------
+21.------------------------------------------------ word reverse ---------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
 public class ReverseWord {
@@ -933,10 +1019,10 @@ public class SegregateStringNumberOther {
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (str.charAt(i) >= 65 && str.charAt(i) <= 122) {
+            if (str.charAt(i) >= 65 && str.charAt(i) <= 122) {   // if(str.charAt(i)>='A'  && str.charAt(i) <= 'Z')
                 temp += str.charAt(i);
                 sumstring +=1;
-            } else if (str.charAt(i) >= 48 && str.charAt(i) <= 57)  {
+            } else if (str.charAt(i) >= 48 && str.charAt(i) <= 57)  {  // else if (str.charAt(i) >= '0' && str.charAt(i) <= '9') 
                 temp1 +=str.charAt(i);
                 sumnum +=1;
 
@@ -955,7 +1041,7 @@ public class SegregateStringNumberOther {
     }
 }
 
-26.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
+26.-----------------------------------------------number is perfect square------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class PerfectSquare {
     public static boolean isPerfectSquare(int num) {
@@ -990,7 +1076,24 @@ public class PerfectSquare {
 
 
 
-27.-----------------------------------------------number is perfect squre------------------------------------------------------------------------------------------
+27.-----------------------------------------------sum of n natural number------------------------------------------------------------------------------------------
+ sum=n*(n+1)/2
+
+import java.util.Scanner;
+public class SumOfNnumber {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        /*int sum=n*(n+1)/2;
+        System.out.println("The first Sum of "+"n "+"natural number is "+sum);*/
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            sum+=i;
+        }
+    }
+}
+
 
 
 
@@ -1048,7 +1151,7 @@ public class PerfectSquare {
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 NOTE:
---->Array:
+--->>Array:
 1.Array is an collection of homogenus element
 2.Can't directly store integers and strings in the same array .we use an Object array in Java
         Object arr[] = {10, "hello", 3.14}
@@ -1061,11 +1164,11 @@ NOTE:
                                 java array
 5.a.length()
 
---->String
+--->>String
 1.The method str.charAt(i) returns the character at index i in the string str.
 2.
 
---->static and non static keyword in the method
+--->>static and non static keyword in the method
   Don’t use static if the method needs to work with instance variables or objects.
   1. static in Methods
      When a method is declared as static, it means:
@@ -1095,11 +1198,11 @@ NOTE:
              }
              }
 
---->Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
+--->>Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
   example 2: 2,1     ✅ Yes
           4: 2,4,1   ❌ No
 
---->Ignore Space Methods
+--->>Ignore Space Methods
 1. Character.isWhitespace(ch)
 This method checks if a character is a whitespace (including spaces, tabs, and newlines).
 2.replace(" ", "")
@@ -1110,6 +1213,21 @@ This method checks if a character is a whitespace (including spaces, tabs, and n
   String str = "Hello  World \n Java";   or String str = "Hello\tWorld \nJava   Programming";
   String noSpaces = str.replaceAll("\\s", "");
 
+--->>Why Convert a String to a char Array in Java?
+ string are immutable ,when we need to modify individual characters (like changing case), we use a char[] (character array)
+-String str = "Hello";
+ str.charAt(0) = 'h'; // ❌ Compilation Error (Strings are immutable)
+ We need to convert the String into a char[] array to modify individual characters
+
+ -toCharArray() converts the String into a mutable char[] array.
+  We can modify characters in chars[] because arrays are mutable. 
+  After modification, we convert it back to a String.
+  Example:  String str = "Hello";
+            char[] chars = str.toCharArray(); // ✅ Convert to char array
+            chars[0] = 'h'; // ✅ Modify the first character
+
+            String newStr = new String(chars); // ✅ Convert back to String
+            System.out.println(newStr); // Output: hello
 
 
 
@@ -1123,7 +1241,7 @@ This method checks if a character is a whitespace (including spaces, tabs, and n
 
 
 
-Difference Between if, while, and do-while in Java
+--->>Difference Between if, while, and do-while in Java
 Feature	            if Statement	                         while Loop	                               do-while Loop
 Purpose	            Executes a block of code once if the     Repeats the block of code while        Executes the block of code at least once,
                     condition is true.	                     the condition is true.	            then repeats while the condition is true.
