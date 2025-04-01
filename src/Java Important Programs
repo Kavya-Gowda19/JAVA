@@ -1133,11 +1133,6 @@ public class TrailingZero {
     }
 }
 
-
-
-
-
-
 29.------------------------------------------------------Second Largest Number------------------------------------------------------------------------------------
 import java.util.*;
 public class SecondLargest {
@@ -1170,7 +1165,6 @@ public class SecondLargest {
             }
         }
         System.out.println("The Second largest Number is :"+max2);
-
     }
 }
 
