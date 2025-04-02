@@ -629,16 +629,29 @@ An Armstrong number is a positive integer that is equal to the sum of its own di
 
 import java.util.Scanner;
 public class Armstrong {
+    public static int power(int r,int count){
+        int summ=1;
+        for(int i=0;i<count;i++){
+            summ=summ+r;
+        }
+        return summ;
+    }
     public static void main(String args []){
         Scanner s=new Scanner(System.in);
         System.out.println("Enter the number");
         int n=s.nextInt();
         int original=n;
+        int count=0;
+        while(n>0){
+            n=n/10;
+            count++;
+        }
         int sum=0;
         while(n>0){
             int r=n%10;
+            sum=sum+power(r,count);
             n=n/10;
-            sum=sum+ r*r*r;
+
         }
         if(original==sum){
             System.out.println("Number is Armstrong");
@@ -648,6 +661,7 @@ public class Armstrong {
         }
     }
 }
+
 16.------------------------------------------------VowelConsanant---------------------------------------------------------------------------------------------
  import java.util.*;
 public class Vowel {
