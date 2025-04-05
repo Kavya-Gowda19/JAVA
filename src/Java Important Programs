@@ -1182,7 +1182,22 @@ public class SecondLargest {
     }
 }
 
-34.------------------------------------------------------Second Largest Number------------------------------------------------------------------------------------
+34.------------------------------------------------------decimal to binary------------------------------------------------------------------------------------
+The decimal system is the number system we use in everyday life
+It is a base-10 system, meaning it has 10 digits:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+Each digit represents a power of 10 based on its position.
+345 = 3×10² + 4×10¹ + 5×10⁰
+    = 3×100 + 4×10 + 5×1
+    = 300 + 40 + 5
+
+The binary system is used by computers and digital devices.
+It is a base-2 system, meaning it has only 2 digits:
+0 and 1
+Each binary digit (called a bit) represents a power of 2 based on its position.
+1010 = 1×2³ + 0×2² + 1×2¹ + 0×2⁰
+     = 1×8 + 0×4 + 1×2 + 0×1
+     = 8 + 0 + 2 + 0 = 10 (in decimal)
 
 
 
