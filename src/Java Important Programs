@@ -1182,7 +1182,7 @@ public class SecondLargest {
     }
 }
 
-34.------------------------------------------------------decimal to binary------------------------------------------------------------------------------------
+34.------------------------------------------------------decimal binary------------------------------------------------------------------------------------
 The decimal system is the number system we use in everyday life
 It is a base-10 system, meaning it has 10 digits:
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -1198,6 +1198,47 @@ Each binary digit (called a bit) represents a power of 2 based on its position.
 1010 = 1×2³ + 0×2² + 1×2¹ + 0×2⁰
      = 1×8 + 0×4 + 1×2 + 0×1
      = 8 + 0 + 2 + 0 = 10 (in decimal)
+
+// Decimal to Binary
+
+/*import java.util.Scanner;
+public class DecimalToBinary {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        int rem;
+        String c="";
+        while(n!=0) {
+            rem=n%2;
+            c=c+rem;
+            n=n/2;
+        }
+            System.out.println(c);
+    }
+}*/
+
+//Binary To Decimal
+
+import java.util.Scanner;
+public class DecimalToBinary {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a binary number:");
+        int n = s.nextInt();//101
+        int d = 0;
+        int rem=0;
+        int i=0;
+        int power = 0;
+        while(n!=0){
+            rem=n%10;//1
+            d=d+rem*(int) Math.pow(2,i++);//0+1*2 power(0)
+            n=n/10;
+        }
+        System.out.println("Decimal equivalent: " + d);
+    }
+}
+
 
 
 
