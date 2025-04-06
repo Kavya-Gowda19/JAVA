@@ -1182,7 +1182,7 @@ public class SecondLargest {
     }
 }
 
-34.------------------------------------------------------decimal binary------------------------------------------------------------------------------------
+34.------------------------------------------------------decimal binary-----------------------------------------------------------------------------------------------
 The decimal system is the number system we use in everyday life
 It is a base-10 system, meaning it has 10 digits:
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -1240,6 +1240,38 @@ public class DecimalToBinary {
 }
 
 
+35.------------------------------------------------------automorphic Number-----------------------------------------------------------------------------------------------
+An automorphic number (also called a circular number) is a number whose square ends in the same digits as the number itself.
+5² = 25 → ends with 5 →  Automorphic
+6² = 36 → ends with 6 →  Automorphic
+76² = 5776 → ends with 76 →  Automorphic
+7² = 49 → ends with 9 → Not Automorphic
+
+import java.util.Scanner;
+public class automorphic {
+    public static void main (String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        int a=n*n;
+        String num=String.valueOf(n);
+        String square=String.valueOf(a);
+
+        if(square.endsWith(num)){
+            System.out.println("Its Automorphic");
+        }
+        else{
+            System.out.println("Its not  Automorphic");
+        }
+    }
+}
+
+36..------------------------------------------------------automorphic Number-----------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 
@@ -1277,26 +1309,52 @@ public class DecimalToBinary {
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 NOTE:
 --->>Array:
-1.Array is an collection of homogenus element
-2.Can't directly store integers and strings in the same array .we use an Object array in Java
+     1.Array is an collection of homogenus element
+     2.Can't directly store integers and strings in the same array .we use an Object array in Java
         Object arr[] = {10, "hello", 3.14}
         String names[] = {"Alice", "Bob", "Charlie"};
         Int a[]=new int[n];  or in a[]={2,4,5,7};
-3.  Loop through the array                    
-     for (String name : names) {                  for(Interger i: a){
-     System.out.println(name); }                  System.out.println(i)}
-4.To run java Program           javac array.java
+    3.  Loop through the array                    
+        for (String name : names) {                  for(Interger i: a){
+        System.out.println(name); }                  System.out.println(i)}
+    4.To run java Program           javac array.java
                                 java array
-5.a.length()
+    5.a.length()
 
 --->>String
-1.The method str.charAt(i) returns the character at index i in the string str.
-2.
+     1.The method str.charAt(i) returns the character at index i in the string str.
+
+
+     2.String.valueOf() is a static method in the String class that converts different types of values (primitives and objects) into their
+     String representation.
+     int i = 42;
+     String s1 = String.valueOf(i); // "42"
+
+     double d = 3.14;
+     String s2 = String.valueOf(d); // "3.14"
+
+    boolean b = true;
+    String s3 = String.valueOf(b); // "true"
+
+    char[] letters = {'J', 'a', 'v', 'a'};
+    String s4 = String.valueOf(letters); // "Java"
+
+    Object obj = new Integer(100);
+    String s5 = String.valueOf(obj); // "100"
+
+
+    3.parse(): parse() is used to convert a String into another data type, such as int, float, double, boolean, or even LocalDate.
+      example String str = "100";
+              int num = Integer.parseInt(str);
+              System.out.println("Integer: " + num);  //edduparseeddu
+
+
+
 
 --->>static and non static keyword in the method
-  Don’t use static if the method needs to work with instance variables or objects.
-  1. static in Methods
-     When a method is declared as static, it means:
+     Don’t use static if the method needs to work with instance variables or objects.
+     1. static in Methods
+        When a method is declared as static, it means:
        -It belongs to the class and not to any specific object.
        -You can call it without creating an object.
        -It cannot directly access non-static (instance) variables or methods
@@ -1308,8 +1366,8 @@ NOTE:
              greet(); // ✅ Called without an object
              }
              }
-    2.non static in methods
-      Why Not Always Use static?
+     2.non static in methods
+       Why Not Always Use static?
          -If a method needs to access instance variables or methods, it should NOT be static.
          -static methods cannot use this keyword because they don’t belong to an object
               class Example {
@@ -1324,35 +1382,43 @@ NOTE:
              }
 
 --->>Factors of 12 : all numbers that divide 12 exactly 1,2,3,4,6
-  example 2: 2,1     ✅ Yes
+     example 2: 2,1     ✅ Yes
           4: 2,4,1   ❌ No
 
 --->>Ignore Space Methods
-1. Character.isWhitespace(ch)
-This method checks if a character is a whitespace (including spaces, tabs, and newlines).
-2.replace(" ", "")
-  String str = "Hello World";
-  String noSpaces = str.replace(" ", "");  // Output: "HelloWorld"
-3.replaceAll("\\s", "")
-  Removes all whitespace characters, including spaces, tabs, and newlines. 
-  String str = "Hello  World \n Java";   or String str = "Hello\tWorld \nJava   Programming";
-  String noSpaces = str.replaceAll("\\s", "");
+     1. Character.isWhitespace(ch)
+     This method checks if a character is a whitespace (including spaces, tabs, and newlines).
+     2.replace(" ", "")
+     String str = "Hello World";
+     String noSpaces = str.replace(" ", "");  // Output: "HelloWorld"
+     3.replaceAll("\\s", "")
+     Removes all whitespace characters, including spaces, tabs, and newlines. 
+     String str = "Hello  World \n Java";   or String str = "Hello\tWorld \nJava   Programming";
+     String noSpaces = str.replaceAll("\\s", "");
 
 --->>Why Convert a String to a char Array in Java?
- string are immutable ,when we need to modify individual characters (like changing case), we use a char[] (character array)
--String str = "Hello";
- str.charAt(0) = 'h'; // ❌ Compilation Error (Strings are immutable)
- We need to convert the String into a char[] array to modify individual characters
+    string are immutable ,when we need to modify individual characters (like changing case), we use a char[] (character array)
+   -String str = "Hello";
+    str.charAt(0) = 'h'; // ❌ Compilation Error (Strings are immutable)
+    We need to convert the String into a char[] array to modify individual characters
 
- -toCharArray() converts the String into a mutable char[] array.
-  We can modify characters in chars[] because arrays are mutable. 
-  After modification, we convert it back to a String.
-  Example:  String str = "Hello";
+  - toCharArray() converts the String into a mutable char[] array.
+    We can modify characters in chars[] because arrays are mutable. 
+    After modification, we convert it back to a String.
+    Example:  String str = "Hello";
             char[] chars = str.toCharArray(); // ✅ Convert to char array
             chars[0] = 'h'; // ✅ Modify the first character
 
             String newStr = new String(chars); // ✅ Convert back to String
             System.out.println(newStr); // Output: hello
+
+----->>LocalDate today = LocalDate.now(); //gets todays date
+        LocalDate.of(2000, 1, 1);
+        today.getYear();
+        today.getMonth();
+        today.getDayOfMonth();
+
+
 
 
 
@@ -1367,6 +1433,8 @@ This method checks if a character is a whitespace (including spaces, tabs, and n
 
 
 --->>Difference Between if, while, and do-while in Java
+
+
 Feature	            if Statement	                         while Loop	                               do-while Loop
 Purpose	            Executes a block of code once if the     Repeats the block of code while        Executes the block of code at least once,
                     condition is true.	                     the condition is true.	            then repeats while the condition is true.
@@ -1379,9 +1447,14 @@ Syntax	           if (condition) { ... }	             while (condition) { ... }	
 Use Case	   When you need to execute a block          When you need to execute a block only  When you need to execute a block at least once
                    based on a condition but not repeatedly   if the condition is true.	            before checking the condition.
 
+---->> Differenc between parse() and String.valueOf()
 
-
-
+Feature	                   parse()	                                                     String.valueOf()
+Purpose	                   Converts String → data type	                                     Converts data type → String
+Direction	           Input String → int, float, etc.	                             Input int, float, boolean → String
+Type	                   Static method in wrapper classes (like Integer, Double, etc.)     Static method in String class
+Exception Risk	           Throws NumberFormatException if input is invalid	             Never throws an exception
+Example	                   int x = Integer.parseInt("123");	                             String s = String.valueOf(123);
 
 
 
