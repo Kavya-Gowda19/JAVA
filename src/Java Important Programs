@@ -1266,10 +1266,29 @@ public class automorphic {
     }
 }
 
-36..------------------------------------------------------automorphic Number-----------------------------------------------------------------------------------------------
+36..------------------------------------------------------age Calculator-----------------------------------------------------------------------------------------------
 
 
+import java.time.LocalDate; //Allows you to work with dates without time (like birthdates).
+import java.time.Period; //Used to calculate the difference between two dates (e.g., age).
+import java.util.Scanner; //Allows the program to read user input from the console.
+public class ageCalculator {
+    public static void age(String age) {
+        LocalDate now = LocalDate.now();
+        LocalDate age_given = LocalDate.parse(age);
+        //System.out.println(Period.between(age_given, now));output comes as P21Y6M18D(by default P is period)
+        Period p = Period.between(age_given, now);
+        System.out.println("You are " + p.getYears() + " years, " + p.getMonths() + " months, and " + p.getDays() + " days old.");
 
+    }
+    public static void main (String args[]){
+            Scanner s = new Scanner(System.in);
+            System.out.println("Enter the date (YYYY-MM-DD)");
+            String dob = s.nextLine();
+            ageCalculator.age(dob);
+
+        }
+    }
 
 
 
