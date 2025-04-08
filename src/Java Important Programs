@@ -1290,11 +1290,59 @@ public class ageCalculator {
         }
     }
 
-37..------------------------------------------------------age Calculator-----------------------------------------------------------------------------------------------
+37..------------------------------------------------------Area Circle-----------------------------------------------------------------------------------------------
 
+import java.util.*;
 
+public class Circle {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
 
+        System.out.print("Enter the radius: ");
+        double r = s.nextDouble();
 
+        double area = Math.PI * r * r;
+
+        System.out.println("The area of the Circle is: " + area);
+
+        s.close(); // Best practice to close the scanner
+    }
+}
+
+38..------------------------------------------------------Quadratic Quation-----------------------------------------------------------------------------------------------
+
+import java.util.*;
+public class SquareRoot {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the Number : ");
+        double num1=s.nextDouble();
+        System.out.println("Enter the Number : ");
+        double num2=s.nextDouble();
+        System.out.println("Enter the Number : ");
+        double num3=s.nextDouble();
+        double d=0;
+        d=num2*num2 - 4*num1*num3;
+        double root1,root2;
+        if(d>0){
+            root1=(-num2+ Math.sqrt(d))/(2*num1);
+            root2=(-num2-Math.sqrt(d))/(2*num1);
+            System.out.println("Root1 : "+root1);
+            System.out.println("Root2 : "+root2);
+        }
+        else if (d==0) {
+            root1=root2=-num2/(2*num1);
+            System.out.println("Root1 : "+root1);
+            System.out.println("Root2 : "+root2);
+        }
+        else{
+            double real =-num2/(2*num1);
+            double imaginary=Math.sqrt(-d)/(2*num1);
+            System.out.println("Real Root : "+real);
+            System.out.println("Imaginary Root : "+imaginary);
+        }
+    }
+}
 
 
 
