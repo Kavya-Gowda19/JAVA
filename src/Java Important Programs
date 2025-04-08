@@ -1344,6 +1344,57 @@ public class SquareRoot {
     }
 }
 
+39.-------------------------------------------Permutations in which N people can occupy R seats--------------------------------------------------------------------------
+Problem Statement: Find permutations in which n people can occupy r seats in a classroom.
+Examples:
+Example 1:
+Input: N = 5, r = 3
+Output: 60
+
+A permutation is an arrangement of objects in a specific order
+P(n,r)= n!/(n−r)!
+n = total number of items
+r = number of items to arrange
+
+rules:1.order ABC is different from CAB.
+      2.You can’t choose the same item twice unless explicitly allowed.repeation not allwed by default
+      3.If repitaion allowed  P(n,r)=n power r
+        example Example: 3 digits from 0–9 where digits can repeat: 
+
+application example like  How many ways can 5 people sit in 3 chairs?
+​import java.util.Scanner;
+
+public class Permutations {
+    
+    static int factorial(int n) {
+        int fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    static int permutations(int n, int r) {
+        return factorial(n) / factorial(n - r);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total number of people (n): ");
+        int n = sc.nextInt();
+
+        System.out.print("Enter number of seats (r): ");
+        int r = sc.nextInt();
+
+        if (r > n) {
+            System.out.println("r cannot be greater than n.");
+        } else {
+            int result = permutations(n, r);
+            System.out.println("Number of permutations: " + result);
+        }
+    }
+}
+
 
 
 
