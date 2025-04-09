@@ -1331,33 +1331,7 @@ public class SquareRoot {
             System.out.println("Root2 : "+root2);
         }
         else if (d==0) {
-            root1=root2=-num2/(2*num1);
-            System.out.println("Root1 : "+root1);
-            System.out.println("Root2 : "+root2);
-        }
-        else{
-            double real =-num2/(2*num1);
-            double imaginary=Math.sqrt(-d)/(2*num1);
-            System.out.println("Real Root : "+real);
-            System.out.println("Imaginary Root : "+imaginary);
-        }
-    }
-}
-
-39.-------------------------------------------Permutations in which N people can occupy R seats--------------------------------------------------------------------------
-Problem Statement: Find permutations in which n people can occupy r seats in a classroom.
-Examples:
-Example 1:
-Input: N = 5, r = 3
-Output: 60
-
-A permutation is an arrangement of objects in a specific order
-P(n,r)= n!/(n−r)!
-n = total number of items
-r = number of items to arrange
-
-rules:1.order ABC is different from CAB.
-      2.You can’t choose the same item twice unless explicitly allowed.repeation not allwed by default
+            root1=root2=-num2/(2*num1);  
       3.If repitaion allowed  P(n,r)=n power r
         example Example: 3 digits from 0–9 where digits can repeat: 
 
