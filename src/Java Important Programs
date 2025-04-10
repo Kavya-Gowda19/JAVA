@@ -1035,10 +1035,10 @@ import java.util.Scanner;
 public class TowerOfHanoi {
     public void Tower(int ndisk,char A,char B,char C ){
         if(ndisk==1){
-            System.out.println("Move disk 1 from " + A + " to " + C);1p
+            System.out.println("Move disk 1 from " + A + " to " + C);
             return;
         }
-    Tower(ndisk-1,A,C,B);
+    Tower(ndisk-1,A,C,B);//here 3->2->1
     System.out.println("Move disk "+ ndisk + " from "+A +"to"+C);
     Tower(ndisk-1,B,A,C);
     }
