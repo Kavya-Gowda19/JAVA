@@ -1012,6 +1012,50 @@ public class MissingElement {
 27.-----------------------------------------------Diagonal of a Matrix--------------------------------------------------------------------------------------------
 
 28.-----------------------------------------------Tower Of Hanoi--------------------------------------------------------------------------------------------
+ Tower of Hanoi-moving a stack of disks from one rod to another.
+ Rules - 1.Only one disk can be moved at a time.
+         2.Only the top disk of any rod can be moved.
+         3.No larger disk can be placed on top of a smaller disk.
+      rodA      rodB         rodC
+Algorithum:(Example for 3 disk)1.move 2 disk from A to B using C     (for n disk)1.move n-1 disk from A to B using C
+           2.move n from A to B using C                                          2.move n  from A to C using B
+           3.move 2disk from B to C using A                                     3.move n-1 disk from B to C using A
+
+
+                                   Tower(3, A, B, C)
+                                   ├── Tower(2, A, C, B)
+                                   │   ├── Tower(1, A, B, C)         ← base case
+                                   │   └── Tower(1, C, A, B)         ← base case
+                                   └── Tower(2, B, A, C)
+                                       ├── Tower(1, B, C, A)         ← base case
+                                       └── Tower(1, A, B, C)         ← base case
+
+ package ImpPrograms;
+import java.util.Scanner;
+public class TowerOfHanoi {
+    public void Tower(int ndisk,char A,char B,char C ){
+        if(ndisk==1){
+            System.out.println("Move disk 1 from " + A + " to " + C);1p
+            return;
+        }
+    Tower(ndisk-1,A,C,B);
+    System.out.println("Move disk "+ ndisk + " from "+A +"to"+C);
+    Tower(ndisk-1,B,A,C);
+    }
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        TowerOfHanoi t=new TowerOfHanoi();
+        System.out.println("Enter the number of disk");
+        int ndisk=s.nextInt();
+        t.Tower(ndisk,'A','B','C');
+    }
+}
+
+
+
+
+
+
 
 
 29.-----------------------------------------------Segreate String ,Number,special Charaters------------------------------------------------------------------------------------------
