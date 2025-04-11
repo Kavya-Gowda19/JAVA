@@ -1399,9 +1399,9 @@ Explanation: To permute n people in r seats we have to find the value of n!/(n-r
 Example 2:
 Input: N=6,r = 4.
 Output: 360
-                        Permutation Formula  P(n,r)= (n−r)!/ n!
-       where r=number of items or people you want to choose and arrange
-             n=total number of items or people
+                        Permutation Formula  P(n,r)= n!/ (n-r)!
+                        where r = number of items or people you want to choose and arrange
+                              n = total number of items or people
 
 ​
  
@@ -1443,8 +1443,16 @@ public class Permutations {
 
 
 
+when common ratio r==1:
+               s_n=a*n;
 
-
+When common ratio r ≠ 1:
+               s_n=a*3(r^n-1)/(r-1);
+Where:
+      a = first term
+      r = common ratio
+      n = number of terms
+      S_n = sum of the first n terms(n down s)
 
 
 
