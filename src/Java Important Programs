@@ -1243,6 +1243,12 @@ Each binary digit (called a bit) represents a power of 2 based on its position.
      = 1×8 + 0×4 + 1×2 + 0×1
      = 8 + 0 + 2 + 0 = 10 (in decimal)
 
+
+Conversion	               Use	                 Why
+Binary → Decimal	Math.pow(2, power)	    Each bit is a power of 2
+Decimal → Binary	Use % 2 and / 2             Binary digits come from remainders
+
+
 // Decimal to Binary
 
 /*import java.util.Scanner;
@@ -1255,7 +1261,7 @@ public class DecimalToBinary {
         String c="";
         while(n!=0) {
             rem=n%2;
-            c=c+rem;
+            c=rem+c;
             n=n/2;
         }
             System.out.println(c);
@@ -1269,17 +1275,17 @@ public class DecimalToBinary {
     public static void main(String args[]) {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter a binary number:");
-        int n = s.nextInt();//101
-        int d = 0;
-        int rem=0;
+        int n = s.nextInt();//101                                 or                     string binary=s.nextLine();//binary string beacause to handle large string
+        int d = 0;                                                                       int dec=0;
+        int rem=0;                                                                       int power=0;
         int i=0;
-        int power = 0;
-        while(n!=0){
-            rem=n%10;//1
-            d=d+rem*(int) Math.pow(2,i++);//0+1*2 power(0)
-            n=n/10;
-        }
-        System.out.println("Decimal equivalent: " + d);
+        int power = 0;                                                                   for(int i=binary.length-1;i<=0;i--){
+        while(n!=0){                                                                     char bit=binary.charAt(i);
+            rem=n%10;//1                                                                  if(bit=="1"){                                                     
+            d=d+rem*(int) Math.pow(2,i++);//0+1*2 power(0)                                dec=dec+Math.pow(2,power);
+            n=n/10;                                                                        }
+        }                                                                                 power++;
+        System.out.println("Decimal equivalent: " + d);                                  }
     }
 }
 
@@ -1632,6 +1638,8 @@ NOTE:
         today.getMonth();
         today.getDayOfMonth();
 
+------>>Math.pow
+        Math.sqrt
 
 
 
