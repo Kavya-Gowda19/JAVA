@@ -1148,7 +1148,6 @@ public class SumOfNnumber {
     }
 }
 
-
 32.------------------------------------------------------Trailing Zeros------------------------------------------------------------------------------------
 Program to count number of zeros at the end of the number
 -if denominator is more numberator the division result will be zero 5/222=0.
