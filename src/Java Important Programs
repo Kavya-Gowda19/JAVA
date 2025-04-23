@@ -1047,13 +1047,6 @@ public class TowerOfHanoi {
     }
 }
 
-
-
-
-
-
-
-
 29.-----------------------------------------------Segreate String ,Number,special Charaters------------------------------------------------------------------------------------------
  
 import java.util.Scanner;
