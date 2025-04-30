@@ -33,7 +33,11 @@ public class Tcs1 {
         }
     }
 }*/
+
+
   //or
+
+
 import java.util.Scanner;
 
 public class Tcs1 {
