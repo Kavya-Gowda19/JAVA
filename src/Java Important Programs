@@ -107,6 +107,8 @@ public class BubbleSort {
         System.out.println("The maximum element is: "+a[a.length-1]);
     }
 }
+
+
  5.--------------------------------LinearSearch to find the specific elemnts-------------------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class LinearSearch {
@@ -211,6 +213,8 @@ public class Palindrome{
         }
     }
 }
+
+
 9.--------------------------------------Palindrome Number-------------------------------------------------------------------------------------------------------
  import java.util.Scanner;
 public class PalindromeNumber {
@@ -262,6 +266,8 @@ public class PrimeNumber{
         }
     }
 }
+
+
 10.-----------------------------------------------Prime numbers within Range------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class PrimeNumberRange {
