@@ -1,7 +1,5 @@
 package game;
-
 import lifeline.*;
-
 public class QuizGame {
     private String name, city;
     private int age, currentQuestionIndex = 0;
@@ -62,3 +60,4 @@ public class QuizGame {
         return lifelinesUsed;
     }
 }
+
