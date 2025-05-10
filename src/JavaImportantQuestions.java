@@ -1589,7 +1589,7 @@ Where:
 //------------Tap1 Module1
 
 //---------Number is stronger or not
-//------------transpose Of Matrix
+
 //------------find sum of GP series
 //------------area of circle
 //------------roots of the quadratic equation
@@ -1623,13 +1623,6 @@ Explanation: 10 occurs 3 times in the array
 	      5 occurs 2 times in the array
               15 occurs 1 time in the array
 
-//---------------
-
-//------------greatest of two number or 3 number
-//------------find sum of of GP series
-//-----------Diagonal of a Matrix
-//-----------Checking number is power of 2
-//-----------replace all 0 with 1 of given number
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
