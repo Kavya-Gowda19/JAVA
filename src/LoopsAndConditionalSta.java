@@ -50,6 +50,123 @@ public class LoopExample {
 
 //CONDITIONAL STATEMENTS
 
+package LoopsANDConditional;
+/*
+1.if Statement
+2.if else Statement
+3.if else if Ladder Statement
+4.Nested if Statement
+5.Switch Statement
+*/
+
+//1.If Statement
+package LoopsANDConditional;
+
+public class ConditionalStatement {
+    public static void main(String[] args) {
+        int number = 5;
+
+        // Simple if statement
+        if (number < 10) {
+            System.out.println("The number is less than 10.");
+        }
+    }
+}
+//2. If-Else Statement
+
+package LoopsANDConditional;
+
+public class ConditionalStatement {
+    public static void main(String[] args) {
+        int number = 15;
+
+        // If-else statement
+        if (number < 10) {
+            System.out.println("The number is less than 10.");
+        } else {
+            System.out.println("The number is 10 or greater.");
+        }
+    }
+}
+//3. If-Else-If Ladder Statement
+
+package LoopsANDConditional;
+
+public class ConditionalStatement {
+    public static void main(String[] args) {
+        int number = 20;
+
+        // If-else-if ladder
+        if (number < 10) {
+            System.out.println("The number is less than 10.");
+        } else if (number < 20) {
+            System.out.println("The number is between 10 and 19.");
+        } else if (number < 30) {
+            System.out.println("The number is between 20 and 29.");
+        } else {
+            System.out.println("The number is 30 or greater.");
+        }
+    }
+}
+//4. Nested If Statement
+    
+package LoopsANDConditional;
+
+public class ConditionalStatement {
+    public static void main(String[] args) {
+        int number = 25;
+
+        // Nested if statement
+        if (number < 50) {
+            if (number < 30) {
+                System.out.println("The number is less than 30.");
+            } else {
+                System.out.println("The number is 30 or greater but less than 50.");
+            }
+        } else {
+            System.out.println("The number is 50 or greater.");
+        }
+    }
+}
+//5. Switch Statement
+
+package LoopsANDConditional;
+
+public class ConditionalStatement {
+    public static void main(String[] args) {
+        int day = 3;
+
+        // Switch statement
+        switch (day) {
+            case 1:
+                System.out.println("Sunday");
+                break;
+            case 2:
+                System.out.println("Monday");
+                break;
+            case 3:
+                System.out.println("Tuesday");
+                break;
+            case 4:
+                System.out.println("Wednesday");
+                break;
+            case 5:
+                System.out.println("Thursday");
+                break;
+            case 6:
+                System.out.println("Friday");
+                break;
+            case 7:
+                System.out.println("Saturday");
+                break;
+            default:
+                System.out.println("Invalid day number.");
+        }
+    }
+}
+
+
+
 
 
 
