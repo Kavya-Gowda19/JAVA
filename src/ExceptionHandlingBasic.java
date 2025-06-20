@@ -1,3 +1,40 @@
+/*package ExceptionHandling.java;
+import java.io.*;
+import java.util.Scanner;
+public class exceptionHanling {
+
+
+	//Java program to demonstrates handling
+	//the exception using try-catch block
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Scanner s=new Scanner(System.in);
+			System.out.println("Enter the number ");
+			int num1=s.nextInt();
+			System.out.println("Enter the number ");
+			int num2=s.nextInt();
+			int c=num1/num2;
+			System.out.println(c);
+		}
+		catch (ArithmeticException e) {
+			System.out.println("Error: Division by zero is not allowed!");
+		     }
+		finally {
+	         System.out.println(
+	             "Program continues after handling the exception.");
+	     }
+		}
+} */
+//Finally keyword
+//The finally block always executes after the try and catch blocks.
+//It runs regardless of whether an exception was thrown or caught.
+
+
+
+
 package ExceptionHandling.java;
 import java.io.*;
 public class CheckUnchecked {
