@@ -6,7 +6,7 @@ public class LeapYear {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub                // condition 1.divisible by 400
 		Scanner s=new Scanner(System.in);                              2.divisible by 4 and not by 100
-		int x;
+	        int x;
 		System.out.println("Enter the year");
 		x=s.nextInt();
 		if(x%4==0 && x%100!=0) {
@@ -85,8 +85,7 @@ public class BubbleSort {
         for(int i=0;i<n;i++){
             a[i]=s.nextInt();
         }
-        int min=0;
-        int max=0;
+
         int temp=0;
         for(int i=0;i<a.length-1;i++){
             for(int j=i+1;j<a.length;j++){
@@ -506,71 +505,63 @@ public class anagrams {
 	}	
 	}
 // Anagram
-package com.string;
-
 import java.util.Scanner;
-class sorting{
-	char [] sort(char c[]) {
-		char temp;
-		for (int i=0;i<c.length-1;i++) {
-			for (int j=i+1;j<c.length;j++) {
-			if(c[i]>c[j]) {
-				temp=c[i];
-				c[i]=c[j];
-				c[j]=temp;
-			}
-			
-		}
-		
-	}
-	return c;
-}
-}
-public class anagramswithoutbuiltin {
 
-	public static void main(String[] args) {
-		Scanner sc= new Scanner(System.in);
-		//step-1
-				System.out.println("enter the first string:  ");
-				String str1= sc.next();
-				System.out.println("enter the second string:  ");
-				String str2= sc.next();
-				System.out.println("----------");
-				//step-2
-				if(str1.length()==str2.length()) { 
-					char c1[]=new char[str1.length()];
-					char c2[]=new char[str2.length()];
-				//step-3
-				for(int i=0;i<str1.length();i++) {
-					c1[i]=str1.charAt(i);
-					c2[i]=str2.charAt(i);
-				}
-				//step-4
-				//sorting array c1
-		sorting s = new sorting();
-		c1 =s.sort(c1);
-		//sorting arrayc2
-		c2 = s.sort(c2);
-		for(Character c : c1) {
-			System.out.print(c+" ");
-		}
-		System.out.println();
-			System.out.println("------");
-			for(Character c : c1) {
-				System.out.print(c+" ");
-			}
-			System.out.println();
-				System.out.println("------");
-		//step-5
-				for(int i=0;i<c1.length;i++) {
-					if (c1[i]!=c2[i]) {
-						System.out.println("the strings are not anagrams");
-						System.exit(0);
-					}
-				}
-				System.out.println("the strings are  anagrams");
-				}
-	}
+public class Anagrams {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Input strings
+        System.out.println("Enter the first string: ");
+        String str1 = sc.next();
+        System.out.println("Enter the second string: ");
+        String str2 = sc.next();
+
+        // Step 2: Check length first
+        if (str1.length() == str2.length()) {
+            // Step 3: Convert strings to char arrays
+            char[] c1 = str1.toCharArray();
+            char[] c2 = str2.toCharArray();
+
+            // Step 4: Sort both arrays manually using bubble sort
+            for (int i = 0; i < c1.length - 1; i++) {
+                for (int j = i + 1; j < c1.length; j++) {
+                    if (c1[i] > c1[j]) {
+                        char temp = c1[i];
+                        c1[i] = c1[j];
+                        c1[j] = temp;
+                    }
+                }
+            }
+
+            for (int i = 0; i < c2.length - 1; i++) {
+                for (int j = i + 1; j < c2.length; j++) {
+                    if (c2[i] > c2[j]) {
+                        char temp = c2[i];
+                        c2[i] = c2[j];
+                        c2[j] = temp;
+                    }
+                }
+            }
+
+            // Step 5: Compare both sorted arrays
+            boolean isAnagram = true;
+            for (int i = 0; i < c1.length; i++) {
+                if (c1[i] != c2[i]) {
+                    isAnagram = false;
+                    break;
+                }
+            }
+
+            // Step 6: Output result
+            if (isAnagram)
+                System.out.println("The strings are anagrams.");
+            else
+                System.out.println("The strings are not anagrams.");
+        } else {
+            System.out.println("The strings are not anagrams (different lengths).");
+        }
+    }
 }
 
 16.--------------------------------------------------------HCF-LCM---------------------------------------------------------------------------------------------
@@ -1212,7 +1203,7 @@ public class SecondLargest {
                max2=max1;//done beacause before loosing the value is assigned to max2 as max2 is second highest
                max1=a[i];//now a[i] is more than max1 so replacing max1 with present a[i] element
             }
-            else if (a[i]>max2){
+            else if (a[i] > max2 && a[i] != max1){
                 max2=a[i];// as a[i] is moe than max2 so replaing max2 with a[i]
             }
         }
