@@ -1567,6 +1567,55 @@ Where:
       n = number of terms
       S_n = sum of the first n terms(n down s)
 
+//----------------two sum-------------------------------------
+
+	package LeetCode;
+
+import java.util.Arrays;
+
+class TwoSum1and167 {
+    public static void main(String[] args) {
+        int arr[]={2,7,11,15};
+    int a[]= twoSum(arr,13 );
+        System.out.println(-2+2==0);
+    }
+    public static int[] twoSum(int[] numbers, int target) {
+        int res[]=new int[2];
+        for(int i=0;i<=numbers.length-2;i++){
+            for(int j=i+1;j<=numbers.length-1;j++){
+                if(numbers[i]+numbers[j]==target){
+                    res[0]=i+1;
+                    res[1]=j+1;
+
+                }
+            }
+        }
+        System.out.println(Arrays.toString(res));
+        return res;
+    }
+}
+
+
+/*class Solution {
+    public int[] twoSum(int[] number, int target) {
+        int start=0;
+        int end=number.length-1;
+        while(start<end){
+            if(number[start]+number[end]>target){
+                end--;
+            }else if(number[start]+number[end]<target){
+                start++;
+            }else{
+                return new int[]{start+1,end+1};
+            }
+
+
+        }
+        return new int[]{0,0};
+    }
+}*/
+
+
 
 
 
