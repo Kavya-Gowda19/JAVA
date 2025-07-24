@@ -625,7 +625,7 @@ public class Armstrong {
     public static int power(int r,int count){
         int summ=1;
         for(int i=0;i<count;i++){
-            summ=summ+r;
+            summ=summ*r;
         }
         return summ;
     }
