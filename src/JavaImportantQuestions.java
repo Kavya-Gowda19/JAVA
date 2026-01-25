@@ -266,6 +266,419 @@ public class PrimeNumber{
 }
 
 
+----------------------------------------------Binary Search--------------------------------------------------------------------------------------------------------
+public class BinarySearch {
+
+    static int binarySearch(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] == target)
+                return mid;
+            else if (arr[mid] < target)
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 6, 8, 10};
+        int target = 6;
+
+        System.out.println(binarySearch(arr, target));
+    }
+}
+
+
+
+----------------------------------Reverese every third word--------------------------------------------------------------------------------------------------------
+public class ReverseThirdWord {
+    public static void main(String[] args) {
+
+        String str = "I am learning data structures very well";
+        String[] words = str.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+            // check every 3rd word
+            if ((i + 1) % 3 == 0) {
+
+                String word = words[i];
+                String reversed = "";
+
+                // manual reverse using loop
+                for (int j = word.length() - 1; j >= 0; j--) {
+                    reversed = reversed + word.charAt(j);
+                }
+
+                words[i] = reversed;
+            }
+        }
+
+        // join words manually
+        String result = "";
+        for (int i = 0; i < words.length; i++) {
+            result = result + words[i] + " ";
+        }
+
+        System.out.println(result.trim());
+    }
+}
+
+
+
+---------------------------------------------------------character frequency ------------------------------------------------------------------------------------------------
+import java.util.HashMap;
+
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        char[] arr = {'a', 'b', 'a', 'c', 'b', 'a'};
+
+        HashMap<Character, Integer> freq = new HashMap<>();
+
+        for (char ch : arr) {
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+
+        // Print result
+        for (char key : freq.keySet()) {
+            System.out.println(key + " -> " + freq.get(key));
+        }
+    }
+}
+
+
+------------------------------------------------ String LexicoSort -------------------------------------------------------------------------------------------------------
+public class LexicoSort {
+
+    // Function to compare two strings lexicographically
+    static boolean isGreater(String a, String b) {
+        int len = Math.min(a.length(), b.length());
+
+        for (int i = 0; i < len; i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                return a.charAt(i) > b.charAt(i);
+            }
+        }
+        // If all characters are same, longer string is greater
+        return a.length() > b.length();
+    }
+
+    public static void main(String[] args) {
+        String[] arr = {"banana", "apple", "cherry"};
+
+        // Bubble Sort
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (isGreater(arr[j], arr[j + 1])) {
+                    // swap
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print result
+        for (String s : arr) {
+            System.out.print(s + " ");
+        }
+    }
+}
+
+
+---------------------------------------------------Number LexicoSort---------------------------------------------------------------------------------------------------
+
+public class LexicoNumberSort {
+
+    // Count digits in a number
+    static int digits(int n) {
+        if (n == 0) return 1;
+        int count = 0;
+        while (n > 0) {
+            count++;
+            n /= 10;
+        }
+        return count;
+    }
+
+    // Compare two numbers lexicographically
+    static boolean isGreater(int a, int b) {
+        int da = digits(a);
+        int db = digits(b);
+
+        // Bring both numbers to same digit length
+        int x = a, y = b;
+        if (da > db) {
+            x = a / (int) Math.pow(10, da - db);
+        } else if (db > da) {
+            y = b / (int) Math.pow(10, db - da);
+        }
+
+        if (x != y) return x > y;
+
+        // If leading digits equal, compare remaining parts
+        return a > b;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 10, 2};
+
+        // Bubble Sort
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (isGreater(arr[j], arr[j + 1])) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+----------------------------------------------------Valid Parentesis----------------------------------------------------------------------------------------------
+import java.util.Stack;
+
+public class ValidParenthesis {
+
+    static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+                if (stack.isEmpty()) return false;
+
+                char top = stack.pop();
+                if ((ch == ')' && top != '(') ||
+                    (ch == '}' && top != '{') ||
+                    (ch == ']' && top != '['))
+                    return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isValid("{[()]}")); // true
+    }
+}
+
+
+----------------------------------------------Stack using string problems----------------------------------------------------------------------------------------------
+***import java.util.Stack;
+
+public class HelloWorldStack {
+
+    public static void main(String[] args) {
+        String str = "Hello World";
+        Stack<Character> stack = new Stack<>();
+
+        // Push each character into stack
+        for (char ch : str.toCharArray()) {
+            stack.push(ch);
+        }
+
+        // Pop characters from stack
+        System.out.print("Stack output: ");
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop());
+        }
+    }
+}.  Hello world
+    dlorw olleH
+
+
+
+import java.util.Stack;
+
+public class HelloWorldWordStack {
+
+    public static void main(String[] args) {
+        String sentence = "Hello World";
+        String[] words = sentence.split(" ");
+
+        Stack<String> stack = new Stack<>();
+
+        // Push words into stack
+        for (String word : words) {
+            stack.push(word);
+        }
+
+        // Pop words
+        System.out.println("Stack output:");
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
+    }
+} Hello world 
+world Hello 
+
+
+----------------------------------------------Printing Duplicate elements from two array----------------------------------------------------------------------------
+
+import java.util.*;
+
+public class CommonElements {
+    public static void main(String[] args) {
+
+        int[] A = {5, 6, 7, 8, 9, 10};
+        int[] B = {8, 22, 23, 7, 4, 19, 1, 7};
+
+        Set<Integer> setA = new HashSet<>();
+        for (int num : A) {
+            setA.add(num);
+        }
+
+        Set<Integer> result = new HashSet<>();
+        for (int num : B) {
+            if (setA.contains(num)) {
+                result.add(num);
+            }
+        }
+
+        System.out.println(result);
+    }
+}
+
+
+-------------------------------------------------------removing one duplicate element pring only once String -------------------------------------------------------
+
+
+import java.util.*;
+
+public class UniqueElements {
+    public static void main(String[] args) {
+
+        Set<Character> setName = new LinkedHashSet<>(); // here if u give only hashset then order of insection is not maintained
+
+        String name = "kavya";
+
+        for (char ch : name.toCharArray()) {
+            setName.add(ch);
+        }
+
+        for (char ch : setName) {
+            System.out.print(ch + " ");
+        }
+    }
+}
+
+
+
+
+
+---------------------------------------------Prime number sorting--------------------------------------------------------------------------------------------------
+import java.util.*;
+
+public class PrimeSort {
+
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 4, 5, 9, 8, 7};
+
+        List<Integer> primes = new ArrayList<>();
+        List<Integer> nonPrimes = new ArrayList<>();
+
+        for (int num : arr) {
+            if (isPrime(num))
+                primes.add(num);
+            else
+                nonPrimes.add(num);
+        }
+
+        Collections.sort(primes);                 // ascending
+        nonPrimes.sort(Collections.reverseOrder()); // descending
+
+        List<Integer> result = new ArrayList<>();
+        result.addAll(primes);
+        result.addAll(nonPrimes);
+
+        System.out.println(result);
+    }
+}
+
+
+
+----------------------------------------------------------------------------------Array Rotation-----------------------------------------------------------------------
+
+public class ArrayRotation {
+
+    static boolean isRotation(int[] arr1, int[] arr2) {
+        int n = arr1.length;
+        if (n != arr2.length)
+            return false;
+
+        int start = -1;
+        for (int i = 0; i < n; i++) {
+            if (arr1[i] == arr2[0]) {
+                start = i;
+                break;
+            }
+        }
+        if (start == -1) return false;
+
+        for (int i = 0; i < n; i++) {
+            if (arr1[(start + i) % n] != arr2[i])
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {3, 4, 5, 1, 2};
+
+        System.out.println(isRotation(a, b)); // true
+    }
+}
+
+
+----------------------------------------------------String SubSequence Check---------------------------------------------------------------------------------------
+public class SubsequenceCheck {
+
+    static boolean isSubsequence(String s1, String s2) {
+        int i = 0, j = 0;
+
+        while (i < s1.length() && j < s2.length()) {
+            if (s1.charAt(i) == s2.charAt(j)) {
+                j++;
+            }
+            i++;
+        }
+        return j == s2.length();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isSubsequence("abcde", "ace")); // true
+    }
+}
+
+
+
+
+
+
+
 10.-----------------------------------------------Prime numbers within Range------------------------------------------------------------------------------------------
 import java.util.Scanner;
 public class PrimeNumberRange {
@@ -1818,3 +2231,229 @@ Direction	           Input String → int, float, etc.	                         
 Type	                   Static method in wrapper classes (like Integer, Double, etc.)     Static method in String class
 Exception Risk	           Throws NumberFormatException if input is invalid	             Never throws an exception
 Example	                   int x = Integer.parseInt("123");	                             String s = String.valueOf(123);
+
+
+
+
+------->   
+**git pull
+git add .
+git commit -m "feature update"
+git push
+
+------->
+JSON stands for JavaScript Object oriented Notation :
+It is a lightweight data format used to store and exchange data between a client (like a browser or mobile app) and a server.
+JSON stores data as key–value pairs.
+Example:
+
+Json
+{
+  "name": "Kavya",
+  "age": 22,
+  "isStudent": true,
+  "skills": ["Java", "SQL", "DSA"]
+}
+
+
+----->
+REST API Methods :
+1.GET – Read data
+Used to fetch data from the server
+Does not change server data
+Example
+GET /users/1
+
+2.POST – Create data
+Used to create a new resource
+Sends data in request body
+Example
+POST /users
+Json
+{
+  "name": "Kavya",
+  "age": 22
+}
+
+3.PUT – Update (full)
+Used to update entire resource
+Replaces old data - update all the field
+Example
+PUT /users/1
+Copy code
+Json
+{
+  "name": "Kavya Y C",
+  "age": 23
+}
+
+
+4.PATCH – Update (partial)
+Used to update only specific fields
+Example
+Copy code
+Http
+PATCH /users/1
+Copy code
+Json
+{
+  "age": 23
+}
+ Updates only age
+
+5.DELETE – Delete data
+Used to remove a resource
+Example
+Copy code
+Http
+DELETE /users/1
+
+
+------->
+Stack and queue
+  Stack:
+Principle: LIFO (Last In, First Out)
+Operations
+Push → Insert element
+Pop → Remove element
+Peek/Top → View top element
+Example
+Stack of plates
+Undo / Redo in applications
+Recursion 
+
+  Queue:
+
+Principle: FIFO (First In, First Out)
+Operations
+Enqueue → Insert element
+Dequeue → Remove element
+Front/Rear → Access elements
+Example
+Copy code
+
+Enqueue: 10 → 20 → 30
+Dequeue: 10 (removed first)
+Real-life example
+Line at a ticket counter
+Printer queue
+Task scheduling - buffering 
+
+
+
+
+----->
+What is an API Server Error?
+✅ Your request reached the server
+❌ The server failed to process it correctly
+Represented using 5xx HTTP status codes
+
+---->
+Client vs Server Errors
+Client Error.   -----   400 - 499
+Server Error -------   500–599
+
+
+    200 OK	Request successful	GET, UPDATE
+    201 CREATED	New resource created	POST
+    400 BAD REQUEST	Invalid input from client	Missing fields
+    404 NOT FOUND	Requested resource not found	Wrong ID
+    409 CONFLICT	Conflict with existing data	Book already exists
+    500 INTERNAL SERVER ERROR	Server-side failure	Exception / crash
+
+
+
+----->
+
+Common API Server Error Codes & Meaning :
+500 – Internal Server Error
+Generic server failure
+Bug in backend code
+Unhandled exception
+📌 Most common server error
+
+502 – Bad Gateway
+API server received an invalid response from another server
+Happens in microservices or reverse proxy (NGINX) setups
+
+503 – Service Unavailable
+Server is overloaded
+Server is down for maintenance
+Temporary issue
+
+504 – Gateway Timeout
+Server took too long to respond
+Database/API dependency is slow or unresponsive
+
+200 → Request successful
+            Request was successful.
+             Reason it occurs:
+            Server received the request
+            Request syntax is correct
+           Data was found and returned successfully
+201 → Resource created
+              New resource created successfully.
+              Reason it occurs:
+             Client sent valid data
+              Server created a new record in database
+
+400 →Bad Request
+            Meaning:
+            Client sent an invalid request.
+             Reason it occurs:
+             Missing required fields
+              Invalid JSON format
+              Wrong data type
+               Validation failure
+
+401 → Authentication issue
+           Authentication failed.
+          Reason it occurs:
+           Token missing
+           Invalid token
+            User not logged in
+             Wrong username/password
+
+404 → Resource not found
+             Requested resource does not exist.
+            Reason it occurs:
+            Wrong URL
+              Resource ID not present in database
+              API endpoint not defined
+
+500 → Server-side exception
+
+
+----->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
