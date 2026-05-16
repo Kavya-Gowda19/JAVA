@@ -1,3 +1,4 @@
+
 //1.----------------------------------------------------Leap Year Year-------------------------------------------------------------------------------------------------------
 package com.pack;
 import java.util.*;
@@ -252,7 +253,7 @@ public class PrimeNumber{
             flag =true;
         }
         for(int i=2;i<=Math.sqrt(n);i++){
-            if(n%2==0){
+            if(n%i==0){
                 flag=true;
                 break;
             }
