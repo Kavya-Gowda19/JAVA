@@ -350,7 +350,36 @@ public class CharacterFrequency {
         }
     }
 }
+  "or
+import java.util.HashMap;
 
+public class CharacterFrequency {
+
+    public static void main(String[] args) {
+
+        String str = "programming";
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+
+            if (map.containsKey(ch)) {
+
+                map.put(ch, map.get(ch) + 1);
+
+            } else {
+
+                map.put(ch, 1);
+            }
+        }
+
+        // print result
+        for (char ch : map.keySet()) {
+
+            System.out.println(ch + " = " + map.get(ch));
+        }
+    }
+}
 
 ------------------------------------------------ String LexicoSort -------------------------------------------------------------------------------------------------------
 public class LexicoSort {
@@ -526,6 +555,90 @@ public class HelloWorldWordStack {
     }
 } Hello world 
 world Hello 
+
+-------_--------------------------------------
+convert string to int/double
+
+public class StringToInt {
+
+    public static void main(String[] args) {
+
+        String str = "123";
+
+        int num = Integer.parseInt(str);
+
+        System.out.println(num);
+    }
+}
+
+
+                or
+
+public class StringToInt {
+
+    public static void main(String[] args) {
+
+        String str = "500";
+
+        Integer num = Integer.valueOf(str);
+
+        System.out.println(num);
+    }
+}
+
+public class StringToInt {
+
+    public static void main(String[] args) {
+
+        String str = "123";
+
+        try {
+
+            int num = Integer.parseInt(str);
+
+            System.out.println(num);
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("Invalid number");
+        }
+    }
+}
+
+---------------------------------------+-------
+Subarray -- Find a subarray whose sum is equal to x.
+Array = [1, 4, 20, 3, 10, 5]
+x = 33
+20 + 3 + 10 = 33
+
+public class SubarraySum {
+
+    public static void main(String[] args) {
+
+        int[] arr = {1, 4, 20, 3, 10, 5};
+
+        int x = 33;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int sum = 0;
+
+            for (int j = i; j < arr.length; j++) {
+
+                sum = sum + arr[j];
+
+                if (sum == x) {
+
+                    System.out.println(
+                        "Subarray found from index "
+                        + i + " to " + j
+                    );
+                }
+            }
+        }
+    }
+}
+
 
 
 ----------------------------------------------Printing Duplicate elements from two array----------------------------------------------------------------------------
@@ -1530,7 +1643,22 @@ public class PerfectSquare {
 
         }
     }
+                        or
+public class PerfectSquare {
 
+    public static void main(String[] args) {
+
+        int num = 25;
+
+        int sqrt = (int) Math.sqrt(num);
+
+        if (sqrt * sqrt == num) {
+            System.out.println(num + " is a Perfect Square");
+        } else {
+            System.out.println(num + " is NOT a Perfect Square");
+        }
+    }
+}
 
 
 31.-----------------------------------------------sum of n natural number------------------------------------------------------------------------------------------
