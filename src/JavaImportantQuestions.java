@@ -1125,10 +1125,10 @@ public class HcfLcm {
         int n2=s.nextInt();
         int min;   //  int min=math.min(n1,n2); built in function
         if(n1>n2){
-            min=n1;
+            min=n2;
         }
         else{
-            min=n2;
+            min=n1;
         }
         int hcf=0;
         for(int i=1;i<=min;i++){
