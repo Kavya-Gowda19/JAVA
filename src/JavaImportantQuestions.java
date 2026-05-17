@@ -620,6 +620,40 @@ public class SubarraySum {
 
         int x = 33;
 
+        int start = 0;
+        int sum = 0;
+
+        for (int end = 0; end < arr.length; end++) {
+
+            sum = sum + arr[end];
+
+            while (sum > x && start <= end) {
+                sum = sum - arr[start];
+                start++;
+            }
+
+            if (sum == x) {
+
+                System.out.println(
+                    "Subarray found from index "
+                    + start + " to " + end
+                );
+            }
+        }
+    }
+}
+
+
+          or 
+
+public class SubarraySum {
+
+    public static void main(String[] args) {
+
+        int[] arr = {1, 4, 20, 3, 10, 5};
+
+        int x = 33;
+
         for (int i = 0; i < arr.length; i++) {
 
             int sum = 0;
