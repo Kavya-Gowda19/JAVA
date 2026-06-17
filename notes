@@ -1,0 +1,32 @@
+1. e.getMessage():
+     try {
+     int a = 10 / 0;
+     } catch (Exception e) {
+     System.out.println(e.getMessage());
+     }
+Output: / by zero
+✅ Gives only the reason for the exception.
+✅ Useful for showing user-friendly error messages.
+
+2. e.printStackTrace()
+Prints the complete exception details, including:Exception type ,Error message ,Method names ,Class names ,Line numbers where the exception occurred
+    try {
+    int a = 10 / 0;
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
+Output:java.lang.ArithmeticException: / by zero
+       at Test.main(Test.java:5)
+✅ Useful for debugging.
+✅ Helps developers find exactly where the error happened.
+
+BEST PRACTICE:
+catch (Exception e) {
+    System.out.println("Error: " + e.getMessage());
+    e.printStackTrace(); // during development
+}
+In real projects (Spring Boot, Hibernate, Servlets), developers usually use a logging framework instead of printStackTrace():
+                    logger.error("Database Error", e);
+                    because it stores the full stack trace in log files.
+
+
